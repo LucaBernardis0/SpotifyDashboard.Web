@@ -1,5 +1,5 @@
 header {
-    width: 50vw;
+    width: 54vw;
     height: 10vh;
     position: relative;
     text-align: center;
@@ -7,16 +7,21 @@ header {
     display: flex;
     place-items: center;
     justify-content: space-between;
-    padding-inline: 2rem;
     background: rgb(33, 33, 33);
-    background: linear-gradient(20deg, rgba(33, 33, 33, 1) 61%, rgba(30, 215, 96, 1) 100%);
+    background: linear-gradient(20deg, rgba(33, 33, 33, 1) 50%, rgba(30, 215, 96, 1) 100%);
     border-radius: 1.5rem;
+    transition: all.3s ease-in-out
+}
+
+header:hover{
+    box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
 }
 
 .spotify-logo{
     width: fit-content;
     height: 5vh;
     object-fit: cover;
+    margin-left: 2rem;
 }
 
 .user{
@@ -32,8 +37,5 @@ header {
     width: 3vw;
     height: 3vw;
     object-fit: cover;
-}
-
-main {
-    height: 81vh;
+    margin-right: 2rem;
 }

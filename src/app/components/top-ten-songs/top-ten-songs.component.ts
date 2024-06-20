@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Input, Output, output } from '@angular/core';
 import { Songs } from '../../models/songs';
 import { SongPlayerComponent } from '../song-player/song-player.component';
 
@@ -58,9 +58,11 @@ export class TopTenSongsComponent {
     },
   ];
 
+  @Input() name: string = '';
+
 
   playSong(song: Songs){
     console.log(song.songName);
-
+    this.name = song.songName;
   }
 }

@@ -1,6 +1,6 @@
 <div class="player-wrapper">
-    <img src="https://images.unsplash.com/photo-1504387103978-e4ee71416c38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c29uZyUyMGNvdmVyfGVufDB8fDB8fHww" alt="" class="song-img">
-    <h3>Song name</h3>
+    <img src="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="song-img">
+    <h3>Song Name</h3>
     <section class="song-time">
         {{played}} <!-- Controllo se cambia stato -->
     </section>
@@ -10,10 +10,10 @@
         </button>
         <button (click)="StartOrpause()" class="control-btn">
             @if (played) {
-                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-pause playing play"></i>
             }
             @else {
-                <i class="fa-solid fa-play"></i>
+                <i class="fa-solid fa-play play"></i>
             }
         </button>   
         <button (click)="nextsong()" class="control-btn">

@@ -1,0 +1,48 @@
+.genres-wrapper {
+    width: 54vw;
+    height: 50vh;
+    background-color: rgb(33,33,33);
+    border-radius: 1.5rem;
+    display: flex;
+    place-items: center;
+    transition: all .15s ease-in-out;
+}
+
+.genres-wrapper:hover{
+    box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
+}
+
+.genre-list {
+    width: 20vw;
+    height: 90%;
+    border-right: 2px solid #b3b3b3;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.genre-list h2{
+    color: #fff;
+}
+
+.genre-list ul{
+    list-style: none;
+    width: 15vw;
+}
+
+ul li{
+    height: 5vh;
+    align-items: center;
+    color: #fff;
+}
+
+.similar-songs {
+    width: 34vw;
+    height: 90%;
+    text-align: center;
+}
+
+.similar-songs h3{
+    color: #fff;
+}
+

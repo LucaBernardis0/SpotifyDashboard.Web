@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Songs } from '../../models/songs';
 
 @Component({
@@ -10,8 +10,9 @@ import { Songs } from '../../models/songs';
 })
 export class SongPlayerComponent {
 
+
   played: Boolean = false;
-  @Input() songName: String = "";
+  @Output() songName: String = "";
 
   nextsong() {
     console.log("Next song");
@@ -22,6 +23,7 @@ export class SongPlayerComponent {
     if (!this.played) {
       console.log("play");
       this.played = true;
+
     }
     else {
       console.log("pause");

@@ -3,8 +3,13 @@
     height: 40vh;
     display: grid;
     place-items: center;
-    background-color: #363636;
+    background-color: rgb(33,33,33);
     border-radius: 1.5rem;
+    transition: all .15s ease-in-out;
+}
+
+.player-wrapper:hover{
+    box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
 }
 
 h3{
@@ -17,8 +22,8 @@ h3{
 }
 
 .song-img {
-    width: 10vw;
-    height: 10vw;
+    width: 8vw;
+    height: 8vw;
 }
 
 .song-controls {
@@ -33,4 +38,15 @@ h3{
     border-radius: 100%;
     border: none;
     cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+}
+
+.play{
+    font-size: 30px;
+}
+
+.playing{
+    color: #1D8954;
 }

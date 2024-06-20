@@ -1,10 +1,16 @@
 .top-ten-songs {
     display: grid;
-    background-color: #363636;
-    height: fit-content;
+    background-color: rgb(33,33,33);
+    height: 72vh;
     border-radius: 1.5rem;
     width: 18vw;
     overflow: hidden;
+    transition: all .15s ease-in-out;
+}
+
+.top-ten-songs:hover{
+    box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
+
 }
 
 .song {
@@ -13,13 +19,13 @@
     display: flex;
     place-items: center;
     justify-content: left;
-    background-color: #363636;
+    background: rgb(33,33,33);
     transition: all .2s ease-in-out;
 }
 
 .song:hover {
     cursor: pointer;
-    background-color: #2b2b2b;
+    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 61%, rgba(30, 215, 96, 1) 100%);
 }
 
 .song-img {

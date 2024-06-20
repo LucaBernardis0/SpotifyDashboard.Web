@@ -27,11 +27,27 @@ main{
     height: 100vh;
 }
 
+.main-wrapper{
+    height: 72vh;
+    width: 54vw;
+    display: grid;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.inline-wrapper{
+    height: 20vh;
+    width: 54vw;
+    display: flex;
+    justify-content: space-between;
+}
+
 .right-side-elements {
     height: 100vh;
     width: 20vw;
     position: absolute;
     right: 0;
+
     display: flex;
     flex-direction: column;
     place-items: center;

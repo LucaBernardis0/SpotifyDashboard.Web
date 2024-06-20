@@ -8,6 +8,11 @@
     height: 15vh;
     place-items: center;
     justify-content: space-evenly;
+    transition: all .15s ease-in-out;
+}
+
+.top-artis-container:hover{
+    box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
 }
 
 .artist-img {

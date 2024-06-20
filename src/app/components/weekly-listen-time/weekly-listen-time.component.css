@@ -1,0 +1,29 @@
+.weekly-listen-time {
+    width: 18vw;
+    height: 18vh;
+    background: linear-gradient(20deg, rgba(33, 33, 33, 1) 61%, rgba(30, 215, 96, 1) 100%);
+    border-radius: 1.5rem;
+    display: flex;
+    place-items: center;
+    justify-content: space-evenly;
+    transition: all .15s ease-in-out;
+}
+
+.weekly-listen-time:hover{
+    box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
+}
+
+.ore-ascoltate {
+    font-size: 50px;
+    color: #fff;
+}
+
+.description {
+    width: 40%;
+    color: #b3b3b3;
+}
+
+
+h2{
+    margin: 0;
+}
