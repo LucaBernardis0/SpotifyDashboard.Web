@@ -1,0 +1,23 @@
+<div class="player-wrapper">
+    <img src="https://images.unsplash.com/photo-1504387103978-e4ee71416c38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c29uZyUyMGNvdmVyfGVufDB8fDB8fHww" alt="" class="song-img">
+    <h3>Song name</h3>
+    <section class="song-time">
+        {{played}} <!-- Controllo se cambia stato -->
+    </section>
+    <section class="song-controls">
+        <button (click)="rewindSong()" class="control-btn">
+            <i class="fa-solid fa-backward"></i>
+        </button>
+        <button (click)="StartOrpause()" class="control-btn">
+            @if (played) {
+                <i class="fa-solid fa-pause"></i>
+            }
+            @else {
+                <i class="fa-solid fa-play"></i>
+            }
+        </button>   
+        <button (click)="nextsong()" class="control-btn">
+            <i class="fa-solid fa-forward"></i>
+        </button>
+    </section>
+</div>

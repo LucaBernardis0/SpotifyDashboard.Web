@@ -1,0 +1,39 @@
+header {
+    width: 50vw;
+    height: 10vh;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    background: rgb(33, 33, 33);
+    background: linear-gradient(20deg, rgba(33, 33, 33, 1) 61%, rgba(30, 215, 96, 1) 100%);
+    border-radius: 1.5rem;
+}
+
+.spotify-logo{
+    width: fit-content;
+    height: 5vh;
+    object-fit: cover;
+}
+
+.user{
+    display: flex;
+    place-items:center;
+    justify-content: center;
+    width: fit-content;
+    gap: 1rem;
+}
+
+.user-img{
+    border-radius: 100%;
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+}
+
+main {
+    height: 81vh;
+}

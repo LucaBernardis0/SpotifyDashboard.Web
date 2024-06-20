@@ -1,0 +1,36 @@
+.player-wrapper {
+    width: 18vw;
+    height: 40vh;
+    display: grid;
+    place-items: center;
+    background-color: #363636;
+    border-radius: 1.5rem;
+}
+
+h3{
+    margin: 0;
+    color: #fff;
+}
+
+.song-time{
+    color: #b3b3b3;
+}
+
+.song-img {
+    width: 10vw;
+    height: 10vw;
+}
+
+.song-controls {
+    width: 10vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.control-btn {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
