@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    place-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 100vw;
+}
+
+.left-side-elements {
+    height: 100vh;
+    width: 20vw;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-evenly;
+
+}
+
+main{
+    width: 60vw;
+    justify-content: space-evenly;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    height: 100vh;
+}
+
+.right-side-elements {
+    height: 100vh;
+    width: 20vw;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: space-evenly;
+}
