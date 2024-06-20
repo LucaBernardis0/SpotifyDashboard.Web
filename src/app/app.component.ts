@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DashboardWrapperComponent } from "./components/dashboard-wrapper/dashboard-wrapper.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [RouterOutlet, DashboardWrapperComponent]
 })
 export class AppComponent {
-  title = 'SpotifyDashboardWeb';
+  title = 'Spotify Dashboard';
 }
