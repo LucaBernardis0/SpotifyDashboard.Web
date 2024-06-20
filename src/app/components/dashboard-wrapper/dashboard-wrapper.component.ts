@@ -17,6 +17,5 @@ import { DailySongComponent } from "../daily-song/daily-song.component";
     imports: [TopArtistComponent, TopTenSongsComponent, WeeklySongComponent, WeeklyListenTimeComponent, UserDataComponent, SongPlayerComponent, DailyListenTimeComponent, TopGenresComponent, DailySongComponent]
 })
 export class DashboardWrapperComponent {
-songName: any;
 
 }

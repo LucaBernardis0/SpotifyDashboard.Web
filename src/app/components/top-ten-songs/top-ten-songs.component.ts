@@ -58,11 +58,11 @@ export class TopTenSongsComponent {
     },
   ];
 
-  @Input() name: string = '';
+  name: string = '';
 
 
   playSong(song: Songs){
-    console.log(song.songName);
+    console.log(song.artist + ': ' + song.songName);
     this.name = song.songName;
   }
 }
