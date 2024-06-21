@@ -6,7 +6,7 @@ import { Track } from '../models/track';
 @Injectable({
   providedIn: 'root'
 })
-export class TrackServiceService {
+export class TrackService {
 
   private httpHeaders: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
