@@ -1,5 +1,5 @@
 import { Component, Input, Output, output } from '@angular/core';
-import { Songs } from '../../models/songs';
+import { Track } from '../../models/track';
 import { SongPlayerComponent } from '../song-player/song-player.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { SongPlayerComponent } from '../song-player/song-player.component';
   styleUrl: './top-ten-songs.component.css'
 })
 export class TopTenSongsComponent {
-  songs: Songs[] = [
+  songs: Track[] = [
     {
       artist: "Mudimbi",
       songName: "Il Mago",
@@ -61,7 +61,7 @@ export class TopTenSongsComponent {
   name: string = '';
 
 
-  playSong(song: Songs){
+  playSong(song: Track){
     console.log(song.artist + ': ' + song.songName);
     this.name = song.songName;
   }

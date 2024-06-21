@@ -1,5 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
-import { Songs } from '../../models/songs';
+import { Track } from '../../models/track';
 
 @Component({
   selector: 'app-song-player',
