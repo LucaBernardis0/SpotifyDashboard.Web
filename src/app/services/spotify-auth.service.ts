@@ -12,7 +12,7 @@ export class SpotifyAuthService {
 
   constructor(private http: HttpClient) { }
 
-  getAccessoToken(){} */
+  getAccessToken(){} */
 
 
 }

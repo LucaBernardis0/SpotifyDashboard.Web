@@ -18,7 +18,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Il Mago",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -28,7 +29,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Cara Italia",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -38,7 +40,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Il Cielo nella stanza",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -48,7 +51,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Yellow",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -58,7 +62,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Can't hold us",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -68,7 +73,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Don't",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -78,7 +84,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "Bread",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -88,7 +95,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "I can",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
     {
       artist: {
@@ -98,7 +106,8 @@ export class TopTenSongsComponent {
         imageUrl: ''
       },
       songName: "I'm still standing",
-      imgUrl: "vattelapesca"
+      imgUrl: "vattelapesca",
+      genre: []
     },
   ];
 

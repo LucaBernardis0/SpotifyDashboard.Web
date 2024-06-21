@@ -4,4 +4,5 @@ export interface Track{
     artist: Artist;
     songName: string;
     imgUrl: string;
+    genre: string[]
 }
