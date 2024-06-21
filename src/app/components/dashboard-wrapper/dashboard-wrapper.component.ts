@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TopArtistComponent } from "../top-artist/top-artist.component";
 import { TopTenSongsComponent } from "../top-ten-songs/top-ten-songs.component";
 import { WeeklySongComponent } from "../weekly-song/weekly-song.component";
@@ -8,6 +8,7 @@ import { SongPlayerComponent } from "../song-player/song-player.component";
 import { DailyListenTimeComponent } from "../daily-listen-time/daily-listen-time.component";
 import { TopGenresComponent } from "../top-genres/top-genres.component";
 import { DailySongComponent } from "../daily-song/daily-song.component";
+import { SpotifyAuthServiceService } from '../../services/spotify-auth-service.service';
 
 @Component({
     selector: 'app-dashboard-wrapper',
@@ -16,6 +17,18 @@ import { DailySongComponent } from "../daily-song/daily-song.component";
     styleUrl: './dashboard-wrapper.component.css',
     imports: [TopArtistComponent, TopTenSongsComponent, WeeklySongComponent, WeeklyListenTimeComponent, UserDataComponent, SongPlayerComponent, DailyListenTimeComponent, TopGenresComponent, DailySongComponent]
 })
-export class DashboardWrapperComponent {
+export class DashboardWrapperComponent implements OnInit {
+
+    constructor(private spotifyAuthService: SpotifyAuthServiceService) { }
+
+    ngOnInit(): void {
+
+    }
+
+    /* ngOnInit(): void {
+        this.spotifyAuthService.getAccessoToken()
+          .then(token => console.log(`Access token: ${token}`))
+          .catch(error => console.error(`Error: ${error}`));
+      } */
 
 }
