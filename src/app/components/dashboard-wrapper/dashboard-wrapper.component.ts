@@ -8,7 +8,7 @@ import { SongPlayerComponent } from "../song-player/song-player.component";
 import { DailyListenTimeComponent } from "../daily-listen-time/daily-listen-time.component";
 import { TopGenresComponent } from "../top-genres/top-genres.component";
 import { DailySongComponent } from "../daily-song/daily-song.component";
-import { SpotifyAuthServiceService } from '../../services/spotify-auth-service.service';
+import { SpotifyAuthService } from '../../services/spotify-auth.service';
 
 @Component({
     selector: 'app-dashboard-wrapper',
@@ -19,7 +19,7 @@ import { SpotifyAuthServiceService } from '../../services/spotify-auth-service.s
 })
 export class DashboardWrapperComponent implements OnInit {
 
-    constructor(private spotifyAuthService: SpotifyAuthServiceService) { }
+    constructor(private spotifyAuthService: SpotifyAuthService) { }
 
     ngOnInit(): void {
 
