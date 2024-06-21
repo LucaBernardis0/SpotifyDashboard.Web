@@ -1,6 +1,5 @@
 import { Component, Input, Output, output } from '@angular/core';
 import { Track } from '../../models/track';
-import { SongPlayerComponent } from '../song-player/song-player.component';
 
 @Component({
   selector: 'app-top-ten-songs',
@@ -10,59 +9,100 @@ import { SongPlayerComponent } from '../song-player/song-player.component';
   styleUrl: './top-ten-songs.component.css'
 })
 export class TopTenSongsComponent {
-  songs: Track[] = [
+  tracks: Track[] = [
     {
-      artist: "Mudimbi",
+      artist: {
+        name: "Mudimbi",
+        genres: [],
+        id: 1,
+        imageUrl: ''
+      },
       songName: "Il Mago",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Ghali",
+      artist: {
+        name: "Ghali",
+        genres: [],
+        id: 2,
+        imageUrl: ''
+      },
       songName: "Cara Italia",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Salmo",
+      artist: {
+        name: "Salmo",
+        genres: [],
+        id: 3,
+        imageUrl: ''
+      },
       songName: "Il Cielo nella stanza",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Coldplay",
+      artist: {
+        name: "Coldplay",
+        genres: [],
+        id: 4,
+        imageUrl: ''
+      },
       songName: "Yellow",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Mackelmore",
+      artist: {
+        name: "Mackelmore",
+        genres: [],
+        id: 5,
+        imageUrl: ''
+      },
       songName: "Can't hold us",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Ed Sheeran",
+      artist: {
+        name: "Ed Sheeran",
+        genres: [],
+        id: 6,
+        imageUrl: ''
+      },
       songName: "Don't",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Anya Nami",
+      artist: {
+        name: "Anya Nami",
+        genres: [],
+        id: 7,
+        imageUrl: ''
+      },
       songName: "Bread",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Nas",
+      artist: {
+        name: "Nas",
+        genres: [],
+        id: 8,
+        imageUrl: ''
+      },
       songName: "I can",
       imgUrl: "vattelapesca"
     },
     {
-      artist: "Elton John",
+      artist: {
+        name: "Elton John",
+        genres: [],
+        id: 9,
+        imageUrl: ''
+      },
       songName: "I'm still standing",
       imgUrl: "vattelapesca"
     },
   ];
 
-  name: string = '';
-
-
   playSong(song: Track){
-    console.log(song.artist + ': ' + song.songName);
-    this.name = song.songName;
+    console.log(song.artist.name + ': ' + song.songName);
   }
 }
