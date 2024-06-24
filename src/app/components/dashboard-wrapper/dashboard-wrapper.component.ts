@@ -10,6 +10,7 @@ import { DailyListenTimeComponent } from "../daily-listen-time/daily-listen-time
 import { TopGenresComponent } from "../top-genres/top-genres.component";
 import { DailySongComponent } from "../daily-song/daily-song.component";
 import { SpotifyAuthService } from '../../services/spotify-auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-dashboard-wrapper',
@@ -23,12 +24,11 @@ export class DashboardWrapperComponent implements OnInit {
 
     spotifyToken: string = '';
 
-    constructor(private spotifyAuthService: SpotifyAuthService) { }
+    constructor(private spotifyAuthService: SpotifyAuthService, private userService: UserService) { }
 
     ngOnInit(): void {
         this.spotifyAuthService.getAccessToken()
-            .then(token => console.log(`${token}`))
-            .catch(error => console.error(`Error: ${error}`));
+            .subscribe(token => this.userService.setToken(token) );
 
     }
 
