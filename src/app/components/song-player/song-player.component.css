@@ -24,6 +24,7 @@ h3{
 .song-img {
     width: 8vw;
     height: 8vw;
+    object-fit: cover;
 }
 
 .song-controls {
