@@ -12,9 +12,10 @@ export class UserService {
 
   setToken(token: string){
     this.access_token$.next(token);
+    console.log( this.access_token$.getValue());
   }
 
-  getToken(): Observable<string | null> {
-    return this.access_token$.asObservable();
+  getToken(): string | null {
+    return this.access_token$.value;
   }
 }

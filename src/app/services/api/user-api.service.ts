@@ -13,14 +13,10 @@ export class UserApiService {
   constructor(private http: HttpClient, private userService: UserService) { }
 
   getUserData(): Observable<any> {
-    return this.userService.getToken().pipe(
-      switchMap(token => {
-        const headers = new HttpHeaders({
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        });
-        return this.http.get(`${this._baseUrl}/getData`, { headers });
-      })
-    );
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.userService.getToken()}`,
+      'Content-Type': 'application/json',
+    });
+    return this.http.get(`${this._baseUrl}/getData`, { headers });
   }
 }
