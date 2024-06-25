@@ -11,6 +11,7 @@ import { TopGenresComponent } from "../top-genres/top-genres.component";
 import { DailySongComponent } from "../daily-song/daily-song.component";
 import { SpotifyAuthService } from '../../services/spotify-auth.service';
 import { UserService } from '../../services/user.service';
+import { Token } from '@angular/compiler';
 
 @Component({
     selector: 'app-dashboard-wrapper',

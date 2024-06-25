@@ -15,7 +15,7 @@ export class UserDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.userApiService.getUserData().subscribe((data) => {
-      console.log(data);
+      console.log(data)
       // do something with the data
     });
   }

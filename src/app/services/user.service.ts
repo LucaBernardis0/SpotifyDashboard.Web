@@ -1,31 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { User } from '../models/user';
-import { PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private httpHeaders: HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-  });
-
-  private access_token: string = 'token';
-
+  private access_token$: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
 
   constructor(){ }
 
-
   setToken(token: string){
-    this.access_token = token;
-    console.log(this.access_token);
+    this.access_token$.next(token);
   }
 
-  getToken(){
-    return this.access_token;
+  getToken(): Observable<string | null> {
+    return this.access_token$.asObservable();
   }
 }
