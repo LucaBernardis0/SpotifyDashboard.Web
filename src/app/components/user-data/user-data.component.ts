@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { UserApiService } from '../../services/api/user-api.service';
 
 @Component({
   selector: 'app-user-data',
@@ -10,10 +11,10 @@ import { UserService } from '../../services/user.service';
 })
 export class UserDataComponent implements OnInit {
 
-  constructor(private userService: UserService){}
+  constructor(private userApiService: UserApiService){}
 
   ngOnInit(): void {
-    this.userService.getUserData().subscribe((data) => {
+    this.userApiService.getUserData().subscribe((data) => {
       console.log(data);
       // do something with the data
     });

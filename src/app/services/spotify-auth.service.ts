@@ -21,21 +21,36 @@ export class SpotifyAuthService {
       'Authorization': `Basic ${base64AuthString}`,
       'Content-Type': 'application/x-www-form-urlencoded'
     });
-  
+
     const params = new HttpParams()
-     .set('grant_type', 'client_credentials');
-  
+      .set('grant_type', 'client_credentials');
+
+
+    
     return this.http.post(this.tokenUrl, params, { headers })
-       .pipe(
-          map((response: any) => {
-            const accessToken = response.access_token;
-            /* localStorage.setItem('access_token', accessToken); */
-            return accessToken;
-          }),
-          catchError((error: HttpErrorResponse) => {
-            console.error('Error getting access token:', error);
-            throw error;
-          })
-        );
+      .pipe(
+        map((response: any) => {
+          const accessToken = response.access_token;
+          const refreshToken = response.refresh_token;
+
+
+          return accessToken;
+        }),
+        catchError((error: HttpErrorResponse) => {
+          console.error('Error getting access token:', error);
+          throw error;
+        })
+      );
   }
+
+  /* getRefreshtoken(refreshToken: string): Observable<string>{
+    
+    const refresh_token = refreshToken;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+    return refresh_token;
+
+  } */
 }

@@ -28,7 +28,7 @@ export class DashboardWrapperComponent implements OnInit {
 
     ngOnInit(): void {
         this.spotifyAuthService.getAccessToken()
-            .subscribe(token => this.userService.setToken(token) );
+            .subscribe(token => this.userService.setToken(token));
 
     }
 

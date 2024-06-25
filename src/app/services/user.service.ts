@@ -14,37 +14,18 @@ export class UserService {
     'Content-Type': 'application/json',
   });
 
-  private access_token: string | null | undefined;
+  private access_token: string = 'token';
 
-  private readonly _baseUrl: string = '/me'
 
-  constructor(
-    private http: HttpClient,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {
-    if (isPlatformBrowser(this.platformId)) {
-      this.access_token = localStorage.getItem('access_token');
-      console.log(this.access_token);
-    } else {
-      console.log('Not running in a browser environment');
-    }
-  }
+  constructor(){ }
 
-  getUserData(): Observable<any> {
-    
-    this.access_token = this.getToken();
-/*     console.log(this.access_token);
- */    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.access_token}`,
-    });
-  
-    return this.http.get('https://api.spotify.com/v1/me', { headers });
-  }
-  getToken(){
-    return this.access_token;
-  }
 
   setToken(token: string){
     this.access_token = token;
+    console.log(this.access_token);
+  }
+
+  getToken(){
+    return this.access_token;
   }
 }
