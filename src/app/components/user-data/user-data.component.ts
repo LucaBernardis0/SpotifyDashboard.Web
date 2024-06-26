@@ -14,10 +14,10 @@ export class UserDataComponent implements OnInit {
   constructor(private userApiService: UserApiService){}
 
   ngOnInit(): void {
-    /* this.userApiService.getUserData().subscribe((data) => {
+    this.userApiService.getUserData().subscribe((data) => {
       console.log(data)
       // do something with the data
-    }); */
+    });
     
   }
 

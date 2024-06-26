@@ -6,16 +6,17 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 })
 export class UserService {
 
-  private access_token$: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
+  private access_token$: BehaviorSubject<string | null | undefined> = new BehaviorSubject<string | null | undefined>(null);
 
   constructor(){ }
 
-  setToken(token: string){
+  setToken(token: string | undefined){
     this.access_token$.next(token);
     console.log( this.access_token$.getValue());
   }
 
-  getToken(): string | null {
+  getToken(): string | undefined | null {
+    console.log(this.access_token$.value);
     return this.access_token$.value;
   }
 }

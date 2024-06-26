@@ -44,7 +44,7 @@ export class SpotifyAuthService {
     return this.accessToken;
   }
   
-  checkAuthentication(): Observable<void> {
+  checkAuthentication(): Observable<string | undefined> {
     const urlParams = new URLSearchParams(window.location.hash);
     const accessToken = urlParams.get('#access_token')?.toString();
   
@@ -52,14 +52,14 @@ export class SpotifyAuthService {
       if (!this.authenticationInProgress) {
         this.authenticationInProgress = true;
         this.getAuthCode();
-        return of(void 0);
+        return of(undefined);
       } else {
-        return of(void 0);
+        return of(undefined);
       }
     } else {
       this.accessToken = accessToken;
       console.log(accessToken);
-      return of(void 0);
+      return of(accessToken);
     }
   }
 
