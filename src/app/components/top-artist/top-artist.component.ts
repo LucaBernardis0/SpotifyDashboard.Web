@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './top-artist.component.html',
   styleUrl: './top-artist.component.css'
 })
-export class TopArtistComponent {
+export
+ class TopArtistComponent {
 
 }

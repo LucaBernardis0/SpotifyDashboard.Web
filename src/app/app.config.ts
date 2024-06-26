@@ -19,10 +19,9 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([httpInterceptor]), withFetch()),
     {
       provide: APP_INITIALIZER,
-      useFactory: (spotifyAuthService: SpotifyAuthService, userService: UserService) =>
-        () => spotifyAuthService.checkAuthentication()
-                /* .pipe(tap(token => userService.setToken(token)) )*/,
-      deps: [SpotifyAuthService, UserService],
+      useFactory: (spotifyAuthService: SpotifyAuthService) =>
+        () => firstValueFrom(spotifyAuthService.checkAuthentication()),
+      deps: [SpotifyAuthService],
       multi: true
     },
   ]
