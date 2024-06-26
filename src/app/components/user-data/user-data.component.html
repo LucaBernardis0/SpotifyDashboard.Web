@@ -1,8 +1,13 @@
 <header class="user-data">
     <img src="https://th.bing.com/th/id/R.b91927f38504618cef40d2eaaffe3ece?rik=Bu4Wu6%2fEIjRb3w&riu=http%3a%2f%2fstatic2.businessinsider.com%2fimage%2f55801a50eab8ea1f1a3304f1-1200-364%2fspotify-logo.png&ehk=nPuYh82jiwvvhWs098el3V6n%2fPOTw67hj%2f2zus26r0A%3d&risl=&pid=ImgRaw&r=0" alt="" class="spotify-logo">
     <div class="user">
-        <h3 class="username">BernardisLuca0</h3>
-        <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="user-img">
+        <h3 class="username">{{user.display_name}}</h3>
+        @if(user.imagesUrl == null || user.imagesUrl == ''){
+            <img src="https://www.pngkey.com/png/full/52-523516_empty-circle-png.png" alt="" class="user-img">
+        }
+        @else {
+            <img src="{{user.imagesUrl}}" alt="" class="user-img">
+        }
     </div>
 </header>
 

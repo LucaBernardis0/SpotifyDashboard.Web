@@ -1,8 +1,9 @@
 import { Artist } from "./artist";
 
 export interface Track{
+    id: string
     artist: Artist;
-    songName: string;
+    name: string;
     imgUrl: string;
     genre: string[]
 }

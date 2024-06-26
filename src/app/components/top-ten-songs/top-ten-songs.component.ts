@@ -1,5 +1,6 @@
-import { Component, Input, Output, output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Track } from '../../models/track';
+import { TracksApiService } from '../../services/api/tracks-api.service';
 
 @Component({
   selector: 'app-top-ten-songs',
@@ -8,110 +9,34 @@ import { Track } from '../../models/track';
   templateUrl: './top-ten-songs.component.html',
   styleUrl: './top-ten-songs.component.css'
 })
-export class TopTenSongsComponent {
-  tracks: Track[] = [
-    {
-      artist: {
-        name: "Mudimbi",
-        genres: [],
-        id: 1,
-        imageUrl: ''
-      },
-      songName: "Il Mago",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Ghali",
-        genres: [],
-        id: 2,
-        imageUrl: ''
-      },
-      songName: "Cara Italia",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Salmo",
-        genres: [],
-        id: 3,
-        imageUrl: ''
-      },
-      songName: "Il Cielo nella stanza",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Coldplay",
-        genres: [],
-        id: 4,
-        imageUrl: ''
-      },
-      songName: "Yellow",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Mackelmore",
-        genres: [],
-        id: 5,
-        imageUrl: ''
-      },
-      songName: "Can't hold us",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Ed Sheeran",
-        genres: [],
-        id: 6,
-        imageUrl: ''
-      },
-      songName: "Don't",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Anya Nami",
-        genres: [],
-        id: 7,
-        imageUrl: ''
-      },
-      songName: "Bread",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Nas",
-        genres: [],
-        id: 8,
-        imageUrl: ''
-      },
-      songName: "I can",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-    {
-      artist: {
-        name: "Elton John",
-        genres: [],
-        id: 9,
-        imageUrl: ''
-      },
-      songName: "I'm still standing",
-      imgUrl: "vattelapesca",
-      genre: []
-    },
-  ];
+export class TopTenSongsComponent implements OnInit {
 
-  playSong(song: Track){
-    console.log(song.artist.name + ': ' + song.songName);
+  tracks: Track[] = [];
+
+  constructor(private trackApiService: TracksApiService) { }
+
+  ngOnInit(): void {
+    this.trackApiService.getTopTenSongs().subscribe((data) => {
+      this.tracks = data.map((item: any) => {
+        return {
+          id: item.id,
+          artist: {
+            id: '', // assign a valid id
+            name: item.name,
+            genres: [], // assign a valid genres array
+            imageUrl: '', // assign a valid image url
+            imageUrlType: '' // assign a valid image url type
+          },
+          name: item.name,
+          imgUrl: '',
+          genre: []
+        };
+      });
+      console.log(data);
+    });
+  }
+
+  playSong(song: Track) {
+    console.log(song.artist.name + ': ' + song.name);
   }
 }

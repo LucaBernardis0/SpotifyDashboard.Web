@@ -1,5 +1,5 @@
 export interface User{
-    userName: string
+    display_name: string
     email: string
     imagesUrl: string
     id: number

@@ -25,7 +25,7 @@ export class SpotifyAuthService {
 
   getAuthCode(): string | undefined {
     this.authenticationInProgress = true;
-    const scope = 'user-read-private user-read-email';
+    const scope = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-recently-played user-top-read user-library-read';
     const params = new URLSearchParams({
       response_type: 'token',
       client_id: this.clientId,

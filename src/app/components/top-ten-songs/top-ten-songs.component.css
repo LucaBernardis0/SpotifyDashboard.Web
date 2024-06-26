@@ -35,6 +35,9 @@
 
 .song-data {
     margin-left: 2vw;
+    overflow: hidden;
+    text-wrap: nowrap;
+    width: 35%;
 }
 
 h3,
@@ -44,9 +47,11 @@ h4 {
 
 h4 {
     color: #b3b3b3;
+    font-size: 12px;
 }
 
 h3 {
+    font-size: 17px;
     color: #fff;
 }
 

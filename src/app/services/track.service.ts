@@ -1,40 +1,22 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Track } from '../models/track';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrackService {
 
-  private httpHeaders: HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-  });
+  private access_token$: BehaviorSubject<string | null | undefined> = new BehaviorSubject<string | null | undefined>(null);
+
+  constructor(){ }
+
+  setToken(token: string | undefined){
+    this.access_token$.next(token);
+  }
+
+  getToken(): string | undefined | null {
+    return this.access_token$.value;
+  }
+
   
-  private _baseURL:string = '/track';
-
-  constructor(private http: HttpClient) { }
-
-
-  getTopTenSongs(): Observable<Track[]> {
-    return this.http.get<Track[]>(this._baseURL + '/topTenTracks');
-  }
-
-  getDailySong(): Observable<Track>{
-    return this.http.get<Track>(this._baseURL + '/dailyTrack');
-  }
-
-  getWeeklyTrack(): Observable<Track>{
-    return this.http.get<Track>(this._baseURL + '/weeklyTrack');
-  }
-
-  getDailyTime(): Observable<number>{
-    return this.http.get<number>(this._baseURL + '/dailyTime');
-  }
-
-  getWeeklyTime(): Observable<number>{
-    return this.http.get<number>(this._baseURL + '/weeklyTime');
-  }
-
 }

@@ -1,6 +1,6 @@
 export interface Artist{
     genres: string[]
-    id: number
+    id: string;
     imageUrl: string
     name: string
 }

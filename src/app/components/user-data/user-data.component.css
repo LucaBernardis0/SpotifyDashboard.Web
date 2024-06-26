@@ -32,6 +32,10 @@ header:hover{
     gap: 1rem;
 }
 
+.username{
+    margin-right: 1rem;
+}
+
 .user-img{
     border-radius: 100%;
     width: 3vw;
