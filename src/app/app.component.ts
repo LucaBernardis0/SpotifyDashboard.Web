@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DashboardWrapperComponent } from "./components/dashboard-wrapper/dashboard-wrapper.component";
+import { SpotifyAuthService } from './services/spotify-auth.service';
 
 @Component({
     selector: 'app-root',
@@ -10,5 +11,6 @@ import { DashboardWrapperComponent } from "./components/dashboard-wrapper/dashbo
     imports: [RouterOutlet, DashboardWrapperComponent]
 })
 export class AppComponent {
+
   title = 'Spotify Dashboard';
 }
