@@ -18,6 +18,12 @@ export class TopTenSongsComponent implements OnInit {
   ngOnInit(): void {
     this.trackApiService.getTopTenSongs().subscribe((data) => {
       this.tracks = data.map((item: any) => {
+
+        var minuteDuration: string;
+
+        minuteDuration = formatDuration(item.duration_ms);
+
+
         return {
           id: item.id,
           artist: {
@@ -29,7 +35,8 @@ export class TopTenSongsComponent implements OnInit {
           },
           name: item.name,
           image: item.image,
-          genre: []
+          genre: [],
+          duration: minuteDuration
         };
       });
       console.log(data);
@@ -39,4 +46,11 @@ export class TopTenSongsComponent implements OnInit {
   playSong(song: Track) {
     console.log(song.artist.name + ': ' + song.name);
   }
+}
+
+function formatDuration(durationMs: number): string {
+  const minutes = Math.floor(durationMs / 60000);
+  const seconds = Math.floor((durationMs % 60000) / 1000);
+
+  return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }

@@ -6,4 +6,5 @@ export interface Track{
     name: string;
     image: string;
     genre: string[]
+    duration: string;
 }
