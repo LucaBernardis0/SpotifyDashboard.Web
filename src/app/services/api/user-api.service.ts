@@ -18,10 +18,6 @@ export class UserApiService {
   constructor(private http: HttpClient, private userService: UserService) { }
 
   getUserData(): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.userService.getToken()}`,
-      'Content-Type': 'application/json',
-    });
     return this.http.get(`${this._baseUrl}/getData`, { headers: this.httpheaders });
   }
 

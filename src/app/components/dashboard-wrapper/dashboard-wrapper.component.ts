@@ -4,12 +4,11 @@ import { TopArtistComponent } from "../top-artist/top-artist.component";
 import { TopTenSongsComponent } from "../top-ten-songs/top-ten-songs.component";
 import { UserDataComponent } from "../user-data/user-data.component";
 import { SongPlayerComponent } from "../song-player/song-player.component";
-import { DailyListenTimeComponent } from "../daily-listen-time/daily-listen-time.component";
 import { TopGenresComponent } from "../top-genres/top-genres.component";
 import { DailySongComponent } from "../daily-song/daily-song.component";
 import { SpotifyAuthService } from '../../services/spotify-auth.service';
-import { UserService } from '../../services/user.service';
-import { Token } from '@angular/compiler';
+import { TopArtistAlbumComponent } from '../top-artist-album/top-artist-album.component';
+import { TopArtistSongComponent } from '../top-artist-song/top-artist-song.component';
 import { UserPlaylistComponent } from "../user-playlist/user-playlist.component";
 
 @Component({
@@ -18,7 +17,7 @@ import { UserPlaylistComponent } from "../user-playlist/user-playlist.component"
     templateUrl: './dashboard-wrapper.component.html',
     styleUrls: ['./dashboard-wrapper.component.css'],
     providers: [HttpClient, SpotifyAuthService],
-    imports: [TopArtistComponent, TopTenSongsComponent, UserDataComponent, DailyListenTimeComponent, DailySongComponent, TopGenresComponent, SongPlayerComponent, UserPlaylistComponent]
+    imports: [TopArtistComponent, TopTenSongsComponent, UserDataComponent, DailySongComponent, TopGenresComponent, SongPlayerComponent, UserPlaylistComponent, TopArtistAlbumComponent, TopArtistSongComponent]
 })
 export class DashboardWrapperComponent implements OnInit {
 
