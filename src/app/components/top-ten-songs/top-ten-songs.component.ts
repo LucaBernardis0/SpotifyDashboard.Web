@@ -22,7 +22,7 @@ export class TopTenSongsComponent implements OnInit {
           id: item.id,
           artist: {
             id: '', // assign a valid id
-            name: item.name,
+            name: item.artist,
             genres: [], // assign a valid genres array
             image: '', // assign a valid image url
             imageUrlType: '' // assign a valid image url type

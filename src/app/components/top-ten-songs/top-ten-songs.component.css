@@ -1,10 +1,15 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 .top-ten-songs {
     display: grid;
     background-color: rgb(33,33,33);
     height: 72vh;
     border-radius: 1.5rem;
     width: 18vw;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     transition: all .15s ease-in-out;
 }
 
