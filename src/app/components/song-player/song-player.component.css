@@ -12,9 +12,28 @@
     box-shadow: 0 0 15px 0 rgba(30, 215, 96, 1);
 }
 
+.song-data{
+    display: grid;
+    place-items: center;
+    width: 90%;
+    height: 4vh;
+}
+
 h3{
+    text-align: center;
     margin: 0;
     color: #fff;
+    width: 85%;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+}
+
+h4{
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    text-align: center;
+    color: #b3b3b3;
+    width: 60%;
 }
 
 .song-time{

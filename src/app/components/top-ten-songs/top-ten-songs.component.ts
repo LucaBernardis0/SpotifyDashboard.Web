@@ -1,19 +1,24 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Track } from '../../models/track';
 import { TracksApiService } from '../../services/api/tracks-api.service';
+import { SongPlayerComponent } from '../song-player/song-player.component';
+import { Observable, of } from 'rxjs';
+import { TrackService } from '../../services/track.service';
 
 @Component({
   selector: 'app-top-ten-songs',
   standalone: true,
   imports: [],
+
   templateUrl: './top-ten-songs.component.html',
   styleUrl: './top-ten-songs.component.css'
 })
 export class TopTenSongsComponent implements OnInit {
 
   tracks: Track[] = [];
+  
 
-  constructor(private trackApiService: TracksApiService) { }
+  constructor(private trackApiService: TracksApiService, private trackService: TrackService) { }
 
   ngOnInit(): void {
     this.trackApiService.getTopTenSongs().subscribe((data) => {
@@ -43,8 +48,8 @@ export class TopTenSongsComponent implements OnInit {
     });
   }
 
-  playSong(song: Track) {
-    console.log(song.artist.name + ': ' + song.name);
+  callPlaySong(track: Track){
+    this.trackService.playSong(track);
   }
 }
 

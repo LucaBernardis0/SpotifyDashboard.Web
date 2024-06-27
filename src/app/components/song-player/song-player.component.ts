@@ -1,5 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { Track } from '../../models/track';
+import { TrackService } from '../../services/track.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-song-player',
@@ -10,9 +12,23 @@ import { Track } from '../../models/track';
 })
 export class SongPlayerComponent {
 
-
   played: Boolean = false;
-  @Output() songName: String = "";
+  currentTrack: Track | null | undefined;
+  subscription: Subscription | undefined;
+
+  constructor(private trackService: TrackService) { }
+
+  ngOnInit(): void {
+    this.subscription = this.trackService.currentTrack$.subscribe((track) => {
+      this.currentTrack = track;
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 
   nextsong() {
     console.log("Next song");
@@ -35,5 +51,4 @@ export class SongPlayerComponent {
     console.log("Rewind song")
     this.played = true;
   }
-
 }
