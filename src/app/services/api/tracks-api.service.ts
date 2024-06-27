@@ -23,20 +23,5 @@ export class TracksApiService {
     return this.http.get<Track[]>(this._baseURL + '/topTenTracks', {headers: this.headers});
   }
 
-  getDailySong(): Observable<Track>{
-    return this.http.get<Track>(this._baseURL + '/dailyTrack');
-  }
-
-  getWeeklyTrack(): Observable<Track>{
-    return this.http.get<Track>(this._baseURL + '/weeklyTrack');
-  }
-
-  getDailyTime(): Observable<number>{
-    return this.http.get<number>(this._baseURL + '/dailyTime');
-  }
-
-  getWeeklyTime(): Observable<number>{
-    return this.http.get<number>(this._baseURL + '/weeklyTime');
-  }
 
 }

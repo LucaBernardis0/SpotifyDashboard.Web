@@ -5,6 +5,12 @@
     @else{
         <img src="{{currentTrack?.image}}" alt="" class="song-img">
     }
+    @if (currentTrack?.name == null) {
+        <div class="song-data">
+            <h3>No track Found</h3>
+            <h4>Select one to start</h4>
+        </div>
+    }
     <div class="song-data">
         <h3>{{currentTrack?.name}}</h3>
         <h4>{{currentTrack?.artist?.name}}</h4>

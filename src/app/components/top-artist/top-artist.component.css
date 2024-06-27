@@ -27,19 +27,20 @@
 }
 
 h3{
-    color: #fff;
-}
-
-h4{
     color: #b3b3b3;
 }
 
-.listen-time {
-    font-size: 40px;
+h4{
+    color: #fff;
+}
+
+.top-artist-heading {
+    font-size: 15px;
     margin: 0;
 }
 
 .artist-name {
+    font-size: 25px;
     letter-spacing: 1px;
     margin: 0;
 }

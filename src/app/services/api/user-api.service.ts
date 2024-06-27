@@ -10,6 +10,11 @@ export class UserApiService {
 
   private readonly _baseUrl = '/serverApi/me';
 
+  private httpheaders = new HttpHeaders({
+    'Authorization': `Bearer ${this.userService.getToken()}`,
+    'Content-Type': 'application/json',
+  });
+
   constructor(private http: HttpClient, private userService: UserService) { }
 
   getUserData(): Observable<any> {
@@ -17,6 +22,10 @@ export class UserApiService {
       'Authorization': `Bearer ${this.userService.getToken()}`,
       'Content-Type': 'application/json',
     });
-    return this.http.get(`${this._baseUrl}/getData`, { headers });
+    return this.http.get(`${this._baseUrl}/getData`, { headers: this.httpheaders });
+  }
+
+  getUserPlaylists(): Observable<any>{
+    return this.http.get(`${this._baseUrl}/getPlaylists`, {headers: this.httpheaders});
   }
 }
