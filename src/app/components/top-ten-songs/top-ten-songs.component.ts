@@ -28,7 +28,7 @@ export class TopTenSongsComponent implements OnInit {
             imageUrlType: '' // assign a valid image url type
           },
           name: item.name,
-          imgUrl: '',
+          image: item.image,
           genre: []
         };
       });
