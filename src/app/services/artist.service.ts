@@ -1,27 +1,24 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Artist } from '../models/artist';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArtistServiceService {
+export class ArtistService {
 
-  private httpHeaders: HttpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-  });
+  private access_token$: BehaviorSubject<string | null | undefined> = new BehaviorSubject<string | null | undefined>(null);
 
-  private _baseURL:string = '/artist';
+  constructor(){ }
 
-  constructor(private http: HttpClient) { }
-
-  getArtistData(): Observable<Artist>{
-    return this.http.get<Artist>(this._baseURL + '/data');
+  setToken(token: string | undefined){
+    this.access_token$.next(token);
   }
 
-  getUserTopArtist(): Observable<Artist>{
-    return this.http.get<Artist>(this._baseURL + '/topArtist');
+  getToken(): string | undefined | null {
+    console.log(this.access_token$.value);
+    return this.access_token$.value;
   }
 
 }

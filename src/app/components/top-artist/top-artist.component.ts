@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ArtistApiService } from '../../services/api/artist-api.service';
+import { Artist } from '../../models/artist';
 
 @Component({
   selector: 'app-top-artist',
@@ -8,6 +10,17 @@ import { Component } from '@angular/core';
   styleUrl: './top-artist.component.css'
 })
 export
- class TopArtistComponent {
+ class TopArtistComponent implements OnInit{
+
+  topArtist: Artist = {} as Artist;
+
+  constructor(private artistApiService: ArtistApiService) { }
+
+  ngOnInit(): void {
+    this.artistApiService.getUserTopArtist().subscribe((data) => {
+      this.topArtist = data;
+      console.log(this.topArtist);
+    })
+  }
 
 }

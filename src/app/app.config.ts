@@ -11,6 +11,7 @@ import { UserService } from './services/user.service';
 import { firstValueFrom, tap } from 'rxjs';
 import { response } from 'express';
 import { TrackService } from './services/track.service';
+import { ArtistService } from './services/artist.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,15 +21,16 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([httpInterceptor]), withFetch()),
     {
       provide: APP_INITIALIZER,
-      useFactory: (spotifyAuthService: SpotifyAuthService, userService: UserService, trackService: TrackService) =>
+      useFactory: (spotifyAuthService: SpotifyAuthService, userService: UserService, trackService: TrackService, artistService: ArtistService) =>
         () => spotifyAuthService.checkAuthentication()
           .pipe(
             tap(token => {
               userService.setToken(token);
               trackService.setToken(token);
+              artistService.setToken(token);
             }),
           ),
-      deps: [SpotifyAuthService, UserService, TrackService],
+      deps: [SpotifyAuthService, UserService, TrackService, ArtistService],
       multi: true
     },
   ]
