@@ -1,23 +1,17 @@
 <div class="genres-wrapper">
     <section class="genre-list">
-        <h2>Top 5 generi</h2>
-        <ul>
-            <li>
-                <h3>1° - Rap</h3>
-            </li>
-            <li>
-                <h3>2° - Pop</h3>
-            </li>
-            <li>
-                <h3>3° - Blues</h3>
-            </li>
-            <li>
-                <h3>4° - Rock</h3>
-            </li>
-            <li>
-                <h3>5° - Chill</h3>
-            </li>
-        </ul>
+        <h2>Artist Albums</h2>
+        <div class="album-wrapper">
+            @for(album of albums; track $index){
+                <section class="album" (click)="albumRedirect(album)">
+                    <img src="{{album.image}}" alt="album img" class="album-img">
+                    <div class="album-data">
+                        <h3 class="album-name">{{album.name}}</h3>
+                        <h4 class="album-tracks">{{album.totaltracks}} tracks</h4>
+                    </div>
+                </section>
+            }
+        </div>
     </section>
     <section  class="similar-songs">
         <h3 class="heading">Recommended Tracks</h3>

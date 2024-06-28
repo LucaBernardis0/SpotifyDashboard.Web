@@ -36,10 +36,10 @@ export class TopGenresComponent implements OnInit {
             name: item.name,
             artist: item.artist,
             spotifyUrl: item.spotifyUrl,
-            totaltracks: item.totaltracks
+            totaltracks: item.total_tracks
           }
         })
-        console.log(this.albums[0].artist)
+        console.log(this.albums[0].totaltracks)
       })
 
   
@@ -76,6 +76,10 @@ export class TopGenresComponent implements OnInit {
 
 
     })
+  }
+
+  albumRedirect(album: Album){
+    window.open(album.spotifyUrl, '_blank')
   }
 
   trackRedirect(track: Track){

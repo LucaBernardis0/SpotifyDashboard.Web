@@ -31,15 +31,53 @@
     color: #fff;
 }
 
-.genre-list ul{
-    list-style: none;
-    width: 15vw;
+.album-wrapper {
+    height: 35vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display:grid;
+    place-items: center;
 }
 
-ul li{
+.album {
+    width: 18vw;
+    height: 8vh;
+    display: flex;
+    place-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.album:hover{
+    background-color: rgb(46, 46, 46);
+    border-inline: 3px solid #1db954;
+}
+
+.album-img {
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+}
+
+.album-data {
+    width: 60%;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    display: grid;
+    text-align: left;
     height: 5vh;
-    align-items: center;
+}
+
+.album-name {
+    margin: 0;
     color: #fff;
+}
+
+.album-tracks {
+    margin: 0;
+    font-size: 12px;
+    color: #b3b3b3;
 }
 
 .similar-songs {
