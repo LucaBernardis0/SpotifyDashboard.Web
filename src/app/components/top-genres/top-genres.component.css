@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+    display:none;
+}
+
 .genres-wrapper {
     width: 54vw;
     height: 50vh;
@@ -6,6 +10,7 @@
     display: flex;
     place-items: center;
     transition: all .15s ease-in-out;
+
 }
 
 .genres-wrapper:hover{
@@ -41,9 +46,54 @@ ul li{
     width: 34vw;
     height: 90%;
     text-align: center;
+    overflow-x: scroll;
+    display: grid;
+    place-items: center;
 }
+
 
 .similar-songs h3{
     color: #fff;
 }
+
+.recommended-track {
+    width: 80%;
+    height: 8vh;
+    display: flex;
+    place-items: center;
+    justify-content: space-evenly;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+.recommended-track:hover{
+    background-color: rgb(46, 46, 46);
+    border-inline: 3px solid #1db954;
+}
+
+.rec-img {
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+}
+
+.rec-track-data {
+    width: 55%;
+    display: grid;
+    height: 3vh;
+    text-align: left;
+}
+
+.track-name {
+    margin: 0;
+    color: #fff;
+}
+
+.artist-name {
+    margin: 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
 

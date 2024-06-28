@@ -34,14 +34,14 @@ export class TopTenSongsComponent implements OnInit {
           artist: {
             id: '', // assign a valid id
             name: item.artist,
-            genres: [], // assign a valid genres array
+            genres: '', // assign a valid genres array
             image: '', // assign a valid image url
             imageUrlType: '' // assign a valid image url type
           },
           name: item.name,
           image: item.image,
-          genre: [],
-          duration: minuteDuration
+          duration: minuteDuration,
+          spotifyUrl: ''
         };
       });
       console.log(data);

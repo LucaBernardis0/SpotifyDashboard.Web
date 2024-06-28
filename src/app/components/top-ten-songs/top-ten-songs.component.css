@@ -30,6 +30,7 @@
 .song:hover {
     cursor: pointer;
     background-color: rgb(46, 46, 46);
+    border-inline: 4px solid #1db954;
 }
 
 .song-img {

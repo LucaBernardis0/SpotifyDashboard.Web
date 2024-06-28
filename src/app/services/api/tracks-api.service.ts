@@ -23,5 +23,9 @@ export class TracksApiService {
     return this.http.get<Track[]>(this._baseURL + '/topTenTracks', {headers: this.headers});
   }
 
+  getRecommended(seedArtist: string, seedGenres: string, seedTracks: string): Observable<any>{
+    return this.http.get<any>(`${this._baseURL}/getRecommended?`, {headers: this.headers, params: {seedArtist, seedGenres, seedTracks}});
+
+  }
 
 }

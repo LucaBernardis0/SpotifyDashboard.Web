@@ -5,6 +5,6 @@ export interface Track{
     artist: Artist;
     name: string;
     image: string;
-    genre: string[]
     duration: string;
+    spotifyUrl: string;
 }

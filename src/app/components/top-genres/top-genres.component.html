@@ -21,6 +21,14 @@
     </section>
     <section  class="similar-songs">
         <h3>Canzoni che potrebbero piacerti</h3>
-        
+        @for(recTrack of tracks; track $index){
+            <section class="recommended-track" (click)="trackRedirect(recTrack)">
+                <img src="{{recTrack.image}}" alt="track image" class="rec-img">
+                <div class="rec-track-data">
+                    <h3 class="track-name">{{recTrack.name}}</h3>
+                    <h4 class="artist-name">{{recTrack.artist}}</h4>
+                </div>
+            </section>
+        }
     </section>
 </div>
