@@ -1,6 +1,6 @@
 export interface Artist{
-    genres: string;
     id: string;
-    image: string;
-    name: string;
+    image: string; // link to the artist profile image
+    name: string; // artist name
+    genres: string; // artist genres (can also be an array)
 }

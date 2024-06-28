@@ -7,8 +7,12 @@ import { Track } from '../models/track';
 })
 export class TrackService {
 
+
+  // Shared track value between top Songs & song player
   private currentTrackSubject = new BehaviorSubject<Track | null>(null);
   currentTrack$: Observable<Track | null> = this.currentTrackSubject.asObservable();
+
+  // Shared access token value
   private access_token$: BehaviorSubject<string | null | undefined> = new BehaviorSubject<string | null | undefined>(null);
 
   constructor(){ }

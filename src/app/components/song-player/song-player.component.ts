@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import { Track } from '../../models/track';
 import { TrackService } from '../../services/track.service';
 import { Subscription } from 'rxjs';
@@ -17,6 +17,8 @@ export class SongPlayerComponent {
   subscription: Subscription | undefined;
 
   constructor(private trackService: TrackService) { }
+
+  // Component usable only with spotify premium
 
   ngOnInit(): void {
     this.subscription = this.trackService.currentTrack$.subscribe((track) => {

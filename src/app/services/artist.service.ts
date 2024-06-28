@@ -8,6 +8,7 @@ import { Artist } from '../models/artist';
 })
 export class ArtistService {
 
+  // Shared access token value
   private access_token$: BehaviorSubject<string | null | undefined> = new BehaviorSubject<string | null | undefined>(null);
 
   constructor(){ }

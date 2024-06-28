@@ -1,31 +1,36 @@
-import { Injectable, PLATFORM_ID, TransferState, inject, makeStateKey } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
-import { Observable, of, from, BehaviorSubject } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { Injectable} from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyAuthService {
+
+  
+  // constant values for the authentication process 
   private readonly clientId = '480eb2a6091f4a95892f638ade6228e5';
   private readonly redirect_uri = 'http://localhost:4200/';
   private readonly tokenUrl = 'https://accounts.spotify.com/api/token';
 
-  platformId = inject(PLATFORM_ID);
-  state = inject(TransferState);
-  mykey = makeStateKey<string>('redirectUrl');
 
+  // Shared token value
   private accessToken: string | undefined;
-  private authenticationCompleted = false;
   private authenticationInProgress = false;
-
   private accessTokenSubject = new BehaviorSubject<string | null>(null);
 
   constructor(private http: HttpClient) { }
 
+  // Method to retrieve the authCode
   getAuthCode(): string | undefined {
+
+    // check if the user is already authenticated
     this.authenticationInProgress = true;
+
+    // setting the access scopes for the authenticated user
     const scope = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-recently-played user-top-read user-library-read';
+
+    // setting the parameters for the http call
     const params = new URLSearchParams({
       response_type: 'token',
       client_id: this.clientId,
@@ -34,16 +39,18 @@ export class SpotifyAuthService {
     });
   
     const authUrl = `https://accounts.spotify.com/authorize?${params.toString()}`;
-    console.log(params.toString());
-    console.log(authUrl);
-    if(window.location.hash.toString() == null || window.location.hash.toString() == '')
+
+    // check if the user already authenticated
+    if(window.location.hash.toString() == null || window.location.hash.toString() == '') // if its not than it redirects to the authentication page
       window.location.href = authUrl;
     const urlParams = new URLSearchParams(window.location.hash);
+
+    // If the user is already autheticated, get the access_token value from the url params
     this.accessToken = urlParams.get('#access_token')?.toString();
-    console.log(this.accessToken);
     return this.accessToken;
   }
   
+  // Check the user authentication
   checkAuthentication(): Observable<string | undefined> {
     const urlParams = new URLSearchParams(window.location.hash);
     const accessToken = urlParams.get('#access_token')?.toString();

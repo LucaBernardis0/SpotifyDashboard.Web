@@ -6,6 +6,7 @@ import { BehaviorSubject} from 'rxjs';
 })
 export class UserService {
 
+  // Shared access token value
   private access_token$: BehaviorSubject<string | null | undefined> = new BehaviorSubject<string | null | undefined>(null);
 
   constructor(){ }

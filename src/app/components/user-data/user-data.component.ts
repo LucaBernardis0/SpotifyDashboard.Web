@@ -12,15 +12,15 @@ import { User } from '../../models/user';
 })
 export class UserDataComponent implements OnInit {
 
-
   user: User = {} as User;
+
   constructor(private userApiService: UserApiService){}
 
   ngOnInit(): void {
+
+    // When the component is initialized it calls the api to get the requested user's data 
     this.userApiService.getUserData().subscribe((data) => {
-      console.log(data);
       this.user = data;
-      
     });
     
   }

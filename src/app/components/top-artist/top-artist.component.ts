@@ -17,9 +17,10 @@ export
   constructor(private artistApiService: ArtistApiService) { }
 
   ngOnInit(): void {
+
+    // When the component is initialized it calls the api to retrieve the data about the user's favourite artist
     this.artistApiService.getUserTopArtist().subscribe((data) => {
       this.topArtist = data;
-      console.log(this.topArtist);
     })
   }
 

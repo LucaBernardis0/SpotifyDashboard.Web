@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Track } from '../../models/track';
-import { ArtistService } from '../../services/artist.service';
 import { ArtistApiService } from '../../services/api/artist-api.service';
 
 @Component({
@@ -17,10 +16,14 @@ export class TopArtistSongComponent implements OnInit{
   constructor(private artistService: ArtistApiService){}
 
   ngOnInit(): void {
+
+    // When the component is initialized it calls the api to get the top artist data
     this.artistService.getUserTopArtist().subscribe((data) => {
+
+      // Pass the artist id to the next api call
+      // Calls an api to get the best track of the passed artist ( favourite artist in this case )
       this.artistService.getArtistTopTrack(data.id).subscribe((track) => {
         this.toptrack = track;
-        console.log(this.toptrack);
       })
     })
   }

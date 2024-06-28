@@ -1,10 +1,12 @@
 import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
-import { inject } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
-import { Router } from '@angular/router';
 
 export const httpInterceptor: HttpInterceptorFn = (req, next) => {
+
+  // Check if your http request containts "serverApi"
   if (req.url.includes('serverApi')) {
+
+    // If its true it intercepts the call and add the backend address as prefix
     const authReq = req.clone({
       url: `https://localhost:7199${req.url}`,
     });
@@ -30,7 +32,7 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
       })
     );
   } else {
-    // If the request doesn't contain 'erverApi', just pass it through
+    // If the request doesn't contain "serverApi", just pass it through
     return next(req);
   }
 };

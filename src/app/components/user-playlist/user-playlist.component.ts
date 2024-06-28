@@ -16,9 +16,9 @@ export class UserPlaylistComponent implements OnInit{
   constructor(private userService: UserApiService){}
 
   ngOnInit(): void {
-    this.userService.getUserPlaylists().subscribe((data) => {
 
-      console.log(data);
+    // when the component is initialize calls the api to get the user's playlists
+    this.userService.getUserPlaylists().subscribe((data) => {
       this.playlists = data.map((item: any) => {
         return {
           id: item.id,
@@ -28,11 +28,10 @@ export class UserPlaylistComponent implements OnInit{
           spotifyUrl: item.spotifyUrl
         };
       }); 
-
-      console.log(this.playlists);
     })
   }
 
+  // When u click on a playlist it redirects you to the spotify page of that playlist
   spotifyRedirect(playlist: Playlist){
     window.open(playlist.spotifyUrl, '_blank');
   }
