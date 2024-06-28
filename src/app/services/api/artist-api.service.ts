@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { Artist } from '../../models/artist';
 import { ArtistService } from '../artist.service';
 import { Track } from '../../models/track';
+import { Album } from '../../models/album';
+import { error } from 'console';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +22,6 @@ export class ArtistApiService {
 
   constructor(private http: HttpClient, private artistService: ArtistService) { }
 
-/*   getArtistData(): Observable<Artist>{
-    return this.http.get<Artist>(this._baseURL + '/data', {headers: this.httpHeaders});
-  } */
 
   getUserTopArtist(): Observable<Artist>{
     return this.http.get<Artist>(this._baseUrl + '/topArtist', {headers: this.httpHeaders});
@@ -29,5 +29,9 @@ export class ArtistApiService {
 
   getArtistTopTrack(id: string): Observable<Track>{
     return this.http.get<Track>(`${this._baseUrl}/topArtistTrack/${id}`, {headers: this.httpHeaders})
+  }
+
+  getArtistAlbums(id: string): Observable<any>{
+    return this.http.get<any>(`${this._baseUrl}/getAlbums/${id}`, {headers: this.httpHeaders})
   }
 }

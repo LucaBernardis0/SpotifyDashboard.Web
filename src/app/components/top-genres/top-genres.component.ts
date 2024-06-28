@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Track } from '../../models/track';
 import { ArtistApiService } from '../../services/api/artist-api.service';
 import { TracksApiService } from '../../services/api/tracks-api.service';
+import { Album } from '../../models/album';
 
 @Component({
   selector: 'app-top-genres',
@@ -13,6 +14,7 @@ import { TracksApiService } from '../../services/api/tracks-api.service';
 export class TopGenresComponent implements OnInit {
 
   tracks: Track[] = [];
+  albums: Album[] = [];
   seedArtist: string = '';
   seedGenres: string = '';
   seedTrack: string = '';
@@ -25,6 +27,24 @@ export class TopGenresComponent implements OnInit {
       this.seedArtist = artist.id;
       this.seedGenres = artist.genres;
 
+      // Retrieve n albums of the favourite artist
+      this.artistService.getArtistAlbums(artist.id).subscribe((album) => {
+        this.albums = album.map((item: any)=> {
+          return{
+            id: item.id,
+            image: item.image,
+            name: item.name,
+            artist: item.artist,
+            spotifyUrl: item.spotifyUrl,
+            totaltracks: item.totaltracks
+          }
+        })
+        console.log(this.albums[0].artist)
+      })
+
+  
+
+      // Retrieve best song of favourit albums
       this.artistService.getArtistTopTrack(artist.id).subscribe((track) => {
         this.seedTrack = track.id;
         console.log(this.seedTrack);
@@ -38,6 +58,7 @@ export class TopGenresComponent implements OnInit {
         const params = queryParams.toString();
         console.log(params);
 
+        // Retireve recommended songs, passing artistId, trackId and genre to base on that
         this.trackService.getRecommended(this.seedArtist, this.seedGenres, this.seedTrack).subscribe((recommended) => {
           this.tracks = recommended.map((item: any) => {
             return {

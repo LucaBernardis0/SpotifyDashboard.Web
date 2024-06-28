@@ -46,7 +46,6 @@ ul li{
     width: 34vw;
     height: 90%;
     text-align: center;
-    overflow-x: scroll;
     display: grid;
     place-items: center;
 }
@@ -54,6 +53,18 @@ ul li{
 
 .similar-songs h3{
     color: #fff;
+}
+
+.heading{
+    background-color: rgb(33,33,33);
+}
+
+.rec-wrapper{
+    height: 36vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow-x: scroll;
 }
 
 .recommended-track {
