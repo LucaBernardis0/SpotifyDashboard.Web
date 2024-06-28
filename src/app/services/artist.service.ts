@@ -18,7 +18,6 @@ export class ArtistService {
   }
 
   getToken(): string | undefined | null {
-    console.log(this.access_token$.value);
     return this.access_token$.value;
   }
 

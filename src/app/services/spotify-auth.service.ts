@@ -65,7 +65,6 @@ export class SpotifyAuthService {
       }
     } else {
       this.accessToken = accessToken;
-      console.log(accessToken);
       return of(accessToken);
     }
   }
