@@ -38,4 +38,8 @@ export class ArtistApiService {
   getArtistAlbums(id: string): Observable<any>{
     return this.http.get<any>(`${this._baseUrl}/getAlbums/${id}`, {headers: this.httpHeaders})
   }
+
+  getNewReleases(): Observable<any>{
+    return this.http.get<any>(`${this._baseUrl}/newReleases`, {headers: this.httpHeaders});
+  }
 }
