@@ -25,12 +25,13 @@
 }
 
 .new-release {
-    width: 100%;
+    width: 95%;
     height: 8vh;
     display: flex;
     place-items: center;
     justify-content: space-evenly;
     cursor: pointer;
+    border-inline: 3px solid transparent;
 }
 
 .new-release:hover{
