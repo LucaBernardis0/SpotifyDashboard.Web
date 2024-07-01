@@ -43,6 +43,8 @@ export class TopTenSongsComponent implements OnInit {
           spotifyUrl: ''
         };
       });
+
+      console.log(this.tracks);
     });
   }
 

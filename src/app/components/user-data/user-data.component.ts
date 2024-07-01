@@ -21,6 +21,7 @@ export class UserDataComponent implements OnInit {
     // When the component is initialized it calls the api to get the requested user's data 
     this.userApiService.getUserData().subscribe((data) => {
       this.user = data;
+      console.log(this.user);
     });
     
   }
