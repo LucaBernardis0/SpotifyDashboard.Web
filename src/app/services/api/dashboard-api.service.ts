@@ -23,4 +23,7 @@ export class DashboardApiService {
     return this.http.get<any>(`${this._baseUrl}/data`, {headers: this.httpheaders});
   }
 
+  getDashboardConfig(): Observable<any>{
+    return this.http.get<any>(`${this._baseUrl}/config`, {headers: this.httpheaders});
+  }
 }

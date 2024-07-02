@@ -28,11 +28,21 @@ export class DashboardWrapperComponent implements OnInit{
     
     // Wrapper component that contains all the dashboard components
     // Gather together all the data from the backend methods and pass them with the @Input() Decorator to the respective components
+    // with this single call u can remove all the
+    // other services cause all the backend calls are handled by this service
     ngOnInit(): void {
-        this.dashboardApiService.getDashboardData().subscribe((data) => {
+        this.dashboardApiService.getDashboardData().subscribe((data) => { 
             this.dashboardData = data;
             console.log(this.dashboardData);
         })
+
+        // Next Step: Call the DashboardConfig Service to manage the widgets to display
+        // Now throws not implemented exeption
+        this.dashboardApiService.getDashboardConfig().subscribe((config) => {
+            throw new Error("Not implemented");
+            /* console.log(config); */
+        })
+       
     }
 
     

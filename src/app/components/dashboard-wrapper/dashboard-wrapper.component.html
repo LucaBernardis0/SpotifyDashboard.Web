@@ -1,11 +1,12 @@
 <!-- This file wrap all the components that toghere build the page -->
-@if(dashboardData){
+
+<!-- Wait until all the data are loaded before loading the page content -->
+@if(dashboardData){ 
 <div class="wrapper" >
     <aside class="left-side-elements">
         <app-top-artist [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
         <app-top-ten-songs [tracks]="dashboardData.userTopTracks"></app-top-ten-songs>
     </aside>
-
 
     <main>
         <app-user-data [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-user-data>

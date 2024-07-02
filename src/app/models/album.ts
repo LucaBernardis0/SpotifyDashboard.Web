@@ -4,5 +4,5 @@ export interface Album{
     artist: string // name of the artist
     image: string // link to the album image
     spotifyUrl: string // external link to the spotify page of the album
-    totaltracks: number
+    total_tracks: number
 }
