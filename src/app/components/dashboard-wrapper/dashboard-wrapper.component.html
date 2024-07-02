@@ -11,7 +11,7 @@
         <app-user-data [userName]="dashboardData.user.name" [image]="dashboardData.user.image"></app-user-data>
         <div class="main-wrapper">
             <div class="inline-wrapper">
-                <app-top-artist-song [toptrack]="dashboardData.artistTopTrack"></app-top-artist-song>
+                <app-top-artist-song [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist.name" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
                 <app-new-releases [releases]="dashboardData.newReleases"></app-new-releases>
             </div>
             <app-top-genres></app-top-genres>

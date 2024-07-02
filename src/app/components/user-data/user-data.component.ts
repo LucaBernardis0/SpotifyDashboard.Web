@@ -9,7 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class UserDataComponent{
 
-
   @Input() userName: string = '';
   @Input() image: string = '';
 

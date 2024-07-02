@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Track } from '../../models/track';
 
 @Component({
   selector: 'app-top-artist-song',
@@ -10,7 +9,9 @@ import { Track } from '../../models/track';
 })
 export class TopArtistSongComponent{
 
-  @Input() toptrack: Track = {} as Track;
+  @Input() artist: string = '';
+  @Input() image: string = '';
+  @Input() trackName: string = '';
 
   constructor(){}
 

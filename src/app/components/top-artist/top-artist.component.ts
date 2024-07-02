@@ -7,8 +7,7 @@ import { Component, Input} from '@angular/core';
   templateUrl: './top-artist.component.html',
   styleUrl: './top-artist.component.css'
 })
-export
- class TopArtistComponent{
+export class TopArtistComponent{
 
   @Input() artistName: string = '';
   @Input() image: string = '';
