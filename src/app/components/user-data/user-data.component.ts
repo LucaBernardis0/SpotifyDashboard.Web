@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
-import { UserApiService } from '../../services/api/user-api.service';
-import { User } from '../../models/user';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-data',
@@ -10,20 +7,12 @@ import { User } from '../../models/user';
   templateUrl: './user-data.component.html',
   styleUrl: './user-data.component.css'
 })
-export class UserDataComponent implements OnInit {
+export class UserDataComponent{
 
-  user: User = {} as User;
 
-  constructor(private userApiService: UserApiService){}
+  @Input() userName: string = '';
+  @Input() image: string = '';
 
-  ngOnInit(): void {
-
-    // When the component is initialized it calls the api to get the requested user's data 
-    this.userApiService.getUserData().subscribe((data) => {
-      this.user = data;
-      console.log(this.user);
-    });
-    
-  }
+  constructor(){}
 
 }

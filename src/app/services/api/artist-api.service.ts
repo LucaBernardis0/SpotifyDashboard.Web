@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Artist } from '../../models/artist';
 import { ArtistService } from '../artist.service';
 import { Track } from '../../models/track';
+import { Album } from '../../models/album';
 
 
 
@@ -39,7 +40,8 @@ export class ArtistApiService {
     return this.http.get<any>(`${this._baseUrl}/getAlbums/${id}`, {headers: this.httpHeaders})
   }
 
-  getNewReleases(): Observable<any>{
-    return this.http.get<any>(`${this._baseUrl}/newReleases`, {headers: this.httpHeaders});
+  // Get the spotify new releases (albums)
+  getNewReleases(): Observable<Album[]>{
+    return this.http.get<Album[]>(`${this._baseUrl}/newReleases`, {headers: this.httpHeaders});
   }
 }

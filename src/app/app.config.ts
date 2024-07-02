@@ -9,6 +9,7 @@ import { UserService } from './services/user.service';
 import { tap } from 'rxjs';
 import { TrackService } from './services/track.service';
 import { ArtistService } from './services/artist.service';
+import { DashboardService } from './services/dashboard.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     {
       // When the application is initialized it calls the method the check the authentication and eventually redirect to the spotify authentication page
       provide: APP_INITIALIZER,
-      useFactory: (spotifyAuthService: SpotifyAuthService, userService: UserService, trackService: TrackService, artistService: ArtistService) =>
+      useFactory: (spotifyAuthService: SpotifyAuthService, userService: UserService, trackService: TrackService, artistService: ArtistService, dashboardService: DashboardService) =>
         () => spotifyAuthService.checkAuthentication()
           .pipe(
             tap(token => {
@@ -28,9 +29,10 @@ export const appConfig: ApplicationConfig = {
               userService.setToken(token);
               trackService.setToken(token);
               artistService.setToken(token);
+              dashboardService.setToken(token);
             }),
           ),
-      deps: [SpotifyAuthService, UserService, TrackService, ArtistService],
+      deps: [SpotifyAuthService, UserService, TrackService, ArtistService, DashboardService],
       multi: true
     },
   ]

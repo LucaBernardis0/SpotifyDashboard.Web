@@ -2,24 +2,24 @@
 
 <div class="wrapper">
     <aside class="left-side-elements">
-        <app-top-artist></app-top-artist>
-        <app-top-ten-songs></app-top-ten-songs>
+        <app-top-artist [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
+        <app-top-ten-songs [tracks]="dashboardData.userTopTracks"></app-top-ten-songs>
     </aside>
 
 
     <main>
-        <app-user-data></app-user-data>
+        <app-user-data [userName]="dashboardData.user.name" [image]="dashboardData.user.image"></app-user-data>
         <div class="main-wrapper">
             <div class="inline-wrapper">
-                <app-top-artist-song></app-top-artist-song>
-                <app-new-releases></app-new-releases>
+                <app-top-artist-song [toptrack]="dashboardData.artistTopTrack"></app-top-artist-song>
+                <app-new-releases [releases]="dashboardData.newReleases"></app-new-releases>
             </div>
             <app-top-genres></app-top-genres>
         </div>
     </main>
 
     <aside class="right-side-elements">
-        <app-user-playlist></app-user-playlist>
+        <app-user-playlist [playlists]="dashboardData.userPlaylists"></app-user-playlist>
         <app-song-player></app-song-player>
     </aside>
 </div>

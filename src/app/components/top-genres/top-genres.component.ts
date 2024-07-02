@@ -27,7 +27,7 @@ export class TopGenresComponent implements OnInit {
   ngOnInit(): void {
 
     // Api call that retrieve the top artist data to get his id and his main genre
-    this.artistService.getUserTopArtist().subscribe((artist) => {
+    /* this.artistService.getUserTopArtist().subscribe((artist) => {
 
       // setting the necessaries data to the query params values
       this.seedArtist = artist.id;
@@ -75,7 +75,7 @@ export class TopGenresComponent implements OnInit {
       })
 
 
-    })
+    }) */
   }
 
   // Redirect the user to the spotify page of the selected album
