@@ -20,9 +20,11 @@ import { TopArtistSongComponent } from '../top-artist-song/top-artist-song.compo
 export class DashboardWrapperComponent implements OnInit{
 
     // The object that contains the result of the dashboard api call
-    dashboardData: DashboardData = {} as DashboardData
+    public dashboardData: DashboardData | null;
 
-    constructor(private dashboardApiService: DashboardApiService){}
+    constructor(private dashboardApiService: DashboardApiService){
+        this.dashboardData = null;
+    }
     
     // Wrapper component that contains all the dashboard components
     // Gather together all the data from the backend methods and pass them with the @Input() Decorator to the respective components

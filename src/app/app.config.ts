@@ -35,5 +35,6 @@ export const appConfig: ApplicationConfig = {
       deps: [SpotifyAuthService, UserService, TrackService, ArtistService, DashboardService],
       multi: true
     },
-  ]
+  ],
+  
 };

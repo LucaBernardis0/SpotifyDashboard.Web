@@ -5,12 +5,14 @@ import { Track } from "./track";
 import { User } from "./user";
 
 export interface DashboardData{
-    artistAlbum: Album[] // list of albums from the user's favourite artist
-    newReleases: Album[] // List of new Releases
-    recommended: Track[] // list of recommended tracks
-    topArtist: Artist // data about the user favourite artist
-    userTopTracks: Track[] // user favourite tracks
-    artistTopTrack: Track // data ofbest song of the user fvaourite artist
     user: User // User data
+
+    topArtist: Artist // data about the user favourite artist
+    artistTopTrack: Track // data ofbest song of the user fvaourite artist
+
+    artistAlbums: Album[] // list of albums from the user's favourite artist
+    newReleases: Album[] // List of new Releases
+    recommendedTracks: Track[] // list of recommended tracks
+    userTopTracks: Track[] // user favourite tracks
     userPlaylists: Playlist[] // list of user playlists
 }

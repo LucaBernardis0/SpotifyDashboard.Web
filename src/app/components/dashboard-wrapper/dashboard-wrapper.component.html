@@ -1,6 +1,6 @@
 <!-- This file wrap all the components that toghere build the page -->
-
-<div class="wrapper">
+@if(dashboardData){
+<div class="wrapper" >
     <aside class="left-side-elements">
         <app-top-artist [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
         <app-top-ten-songs [tracks]="dashboardData.userTopTracks"></app-top-ten-songs>
@@ -8,13 +8,13 @@
 
 
     <main>
-        <app-user-data [userName]="dashboardData.user.name" [image]="dashboardData.user.image"></app-user-data>
+        <app-user-data [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-user-data>
         <div class="main-wrapper">
             <div class="inline-wrapper">
-                <app-top-artist-song [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist.name" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
+                <app-top-artist-song [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
                 <app-new-releases [releases]="dashboardData.newReleases"></app-new-releases>
             </div>
-            <app-top-genres></app-top-genres>
+            <app-top-genres [tracks]="dashboardData.recommendedTracks" [albums]="dashboardData.artistAlbums"></app-top-genres>
         </div>
     </main>
 
@@ -23,3 +23,4 @@
         <app-song-player></app-song-player>
     </aside>
 </div>
+}

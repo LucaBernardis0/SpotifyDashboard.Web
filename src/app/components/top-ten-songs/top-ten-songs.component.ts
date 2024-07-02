@@ -14,6 +14,7 @@ export class TopTenSongsComponent{
 
   @Input() tracks: Track[] = [];
 
+
   constructor(private trackService: TrackService) { }
 
 
@@ -24,6 +25,7 @@ export class TopTenSongsComponent{
 
   // Convert the duration value from ms to minutes and return the value as a string 
   formatDuration(durationMs: number): string {
+
   const minutes = Math.floor(durationMs / 60000);
   const seconds = Math.floor((durationMs % 60000) / 1000);
   return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;

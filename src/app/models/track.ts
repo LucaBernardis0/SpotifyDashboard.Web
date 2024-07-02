@@ -2,7 +2,7 @@ import { Artist } from "./artist";
 
 export interface Track{
     id: string
-    artist: Artist; // data about the artist who made the track
+    artist: string; // data about the artist who made the track
     name: string; // track name
     image: string; // link to the track album image
     duration: string; // duration in ms of the track ( to be converted )
