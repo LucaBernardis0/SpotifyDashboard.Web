@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Album } from '../../models/album';
+import { ListItem } from '../../models/listItem';
 
 @Component({
   selector: 'app-new-releases',
@@ -10,12 +11,12 @@ import { Album } from '../../models/album';
 })
 export class NewReleasesComponent{
 
-  @Input() releases: Album[] = []
+  @Input() releases: ListItem[] = []
 
   constructor(){}
 
   // Redirect the user to the spotify page of the selected new release
-  newReleases(release: Album){
+  newReleases(release: ListItem){
     window.open(release.spotifyUrl, '_blank');
   }
 }

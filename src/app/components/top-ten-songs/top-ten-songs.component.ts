@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Track } from '../../models/track';
 import { TrackService } from '../../services/track.service';
+import { ListItem } from '../../models/listItem';
 
 @Component({
   selector: 'app-top-ten-songs',
@@ -12,7 +13,8 @@ import { TrackService } from '../../services/track.service';
 })
 export class TopTenSongsComponent{
 
-  @Input() tracks: Track[] = [];
+
+  @Input() tracks: ListItem[] = [];
   
 
 
@@ -20,8 +22,8 @@ export class TopTenSongsComponent{
 
 
   // Pass the track values to the player component
-  callPlaySong(track: Track){
-    this.trackService.playSong(track);
+  callPlaySong(track: ListItem){
+    /* this.trackService.playSong(track); */
   }
 
   // Convert the duration value from ms to minutes and return the value as a string 

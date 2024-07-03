@@ -3,8 +3,8 @@
         <section class="playlist-section" (click)="spotifyRedirect(playlist)">
             <img src="{{playlist.image}}" alt="" class="playlist-img">
             <div class="playlist-data">
-                <h3 class="playlist-name">{{playlist.name}}</h3>
-                <h4 class="playlist-artist">{{playlist.owner}}</h4>
+                <h3 class="playlist-name">{{playlist.mainText}}</h3>
+                <h4 class="playlist-artist">{{playlist.secondText}}</h4>
             </div>
         </section>
     }

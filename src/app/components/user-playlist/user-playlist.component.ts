@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Playlist } from '../../models/playlist';
+import { ListItem } from '../../models/listItem';
 
 
 @Component({
@@ -11,11 +12,11 @@ import { Playlist } from '../../models/playlist';
 })
 export class UserPlaylistComponent{
 
-  @Input() playlists: Playlist[] = [];
+  @Input() playlists: ListItem[] = [];
 
   constructor(){}
   // When u click on a playlist it redirects you to the spotify page of that playlist
-  spotifyRedirect(playlist: Playlist){
+  spotifyRedirect(playlist: ListItem){
     window.open(playlist.spotifyUrl, '_blank');
   }
 

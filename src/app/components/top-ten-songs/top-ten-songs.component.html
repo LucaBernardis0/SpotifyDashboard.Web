@@ -3,8 +3,8 @@
         <section class="song" (click)="callPlaySong(this.track)"> 
             <img src="{{track.image}}" class="song-img">
             <div class="song-data" >
-                <h3>{{track.name}}</h3>
-                <h4>{{track.artist}} <!--<br><span class="duration">{{track.duration}} m</span>--></h4>
+                <h3>{{track.mainText}}</h3>
+                <h4>{{track.secondText}} <!--<br><span class="duration">{{track.duration}} m</span>--></h4>
             </div>
         </section>
     }
