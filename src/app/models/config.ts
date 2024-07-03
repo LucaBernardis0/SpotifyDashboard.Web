@@ -3,4 +3,5 @@ export interface Config{
     widgetName: string
     widgetProperty: string
     widgetLabel: string
+    type: string
 }
