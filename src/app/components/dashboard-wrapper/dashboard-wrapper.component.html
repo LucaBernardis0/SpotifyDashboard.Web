@@ -1,42 +1,62 @@
 <!-- This file wrap all the components that toghere build the page -->
 
 <!-- Wait until all the data are loaded before loading the page content -->
-@if(dashboardData){ 
-<div class="wrapper" >
+@if(dashboardData){
+<div class="wrapper">
     <aside class="left-side-elements">
-        @if(widgetNames.toString().includes("top-artist")){
-            <app-top-artist [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
+        @for(widget of dashboardConfig; track $index){
+            @if(widget.widgetName == "top-artist" && widget.type == "card"){
+                <app-top-artist [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
+            }
         }
-        @if(widgetNames.toString().includes("top-ten-songs")){
-            <app-top-ten-songs [tracks]="dashboardData.userTopTracks"></app-top-ten-songs>
+        @for(widget of dashboardConfig; track $index){
+            @if(widget.widgetName == "top-ten-songs" && widget.type == "list"){
+                <app-top-ten-songs [tracks]="dashboardData.userTopTracks"></app-top-ten-songs>
+            }
         }
     </aside>
 
     <main>
-        @if(widgetNames.toString().includes("user-data")){
-            <app-user-data [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-user-data>
+        @for(widget of dashboardConfig; track $index){
+            @if(widget.widgetName === "user-data" && widget.type == "card"){
+                <app-user-data [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-user-data>
+            }
         }
         <div class="main-wrapper">
             <div class="inline-wrapper">
-                @if(widgetNames.toString().includes("top-artist-song")){
+                @for(widget of dashboardConfig; track $index){
+                    @if(widget.widgetName == "top-artist-song" && widget.type == "card"){
                     <app-top-artist-song [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
+                    }
                 }
-                @if(widgetNames.toString().includes("new-releases")){
-                    <app-new-releases [releases]="dashboardData.newReleases"></app-new-releases>
+
+                @for(widget of dashboardConfig; track $index){
+                    @if(widget.widgetName == "new-releases" && widget.type == "list"){
+                        <app-new-releases [releases]="dashboardData.newReleases"></app-new-releases>
+                    }
                 }
             </div>
-            @if(widgetNames.toString().includes("top-genres")){
-                <app-top-genres [tracks]="dashboardData.recommendedTracks" [albums]="dashboardData.artistAlbums"></app-top-genres>
+
+            @for(widget of dashboardConfig; track $index){
+                @if(widget.widgetName == "top-genres" && widget.type == "multi-list"){
+                    <app-top-genres [tracks]="dashboardData.recommendedTracks" [albums]="dashboardData.artistAlbums"></app-top-genres>
+                }
             }
         </div>
     </main>
 
     <aside class="right-side-elements">
-        @if(widgetNames.toString().includes("user-playlist")){
-            <app-user-playlist [playlists]="dashboardData.userPlaylists"></app-user-playlist>
+
+        @for(widget of dashboardConfig; track $index){
+            @if(widget.widgetName == "user-playlist" && widget.type == "list"){
+                <app-user-playlist [playlists]="dashboardData.userPlaylists"></app-user-playlist>
+            }
         }
-        @if(widgetNames.toString().includes("song-player")){
-            <app-song-player></app-song-player>
+
+        @for(widget of dashboardConfig; track $index){
+            @if(widget.widgetName == "song-player" && widget.type == "player"){
+                <app-song-player></app-song-player>
+            }
         }
     </aside>
 </div>
