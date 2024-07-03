@@ -13,6 +13,7 @@ import { TrackService } from '../../services/track.service';
 export class TopTenSongsComponent{
 
   @Input() tracks: Track[] = [];
+  
 
 
   constructor(private trackService: TrackService) { }
