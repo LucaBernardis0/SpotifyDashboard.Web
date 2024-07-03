@@ -20,6 +20,8 @@ import { Config } from '../../models/config';
 })
 export class DashboardWrapperComponent implements OnInit{
 
+    //Check fork work
+
     // The object that contains the result of the dashboard api call
     public dashboardData: DashboardData | null;
     public dashboardConfig: Config[] = []
