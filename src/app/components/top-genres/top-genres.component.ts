@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Track } from '../../models/track';
-import { ArtistApiService } from '../../services/api/artist-api.service';
-import { TracksApiService } from '../../services/api/tracks-api.service';
 import { Album } from '../../models/album';
 
 @Component({

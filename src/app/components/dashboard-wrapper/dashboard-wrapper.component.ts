@@ -9,6 +9,7 @@ import { TopTenSongsComponent } from "../top-ten-songs/top-ten-songs.component";
 import { NewReleasesComponent } from "../new-releases/new-releases.component";
 import { UserPlaylistComponent } from "../user-playlist/user-playlist.component";
 import { TopArtistSongComponent } from '../top-artist-song/top-artist-song.component';
+import { Config } from '../../models/config';
 
 @Component({
     selector: 'app-dashboard-wrapper',
@@ -21,6 +22,7 @@ export class DashboardWrapperComponent implements OnInit{
 
     // The object that contains the result of the dashboard api call
     public dashboardData: DashboardData | null;
+    public dashboardConfig: Config[] = []
 
     constructor(private dashboardApiService: DashboardApiService){
         this.dashboardData = null;
@@ -37,10 +39,9 @@ export class DashboardWrapperComponent implements OnInit{
         })
 
         // Next Step: Call the DashboardConfig Service to manage the widgets to display
-        // Now throws not implemented exeption
         this.dashboardApiService.getDashboardConfig().subscribe((config) => {
-            throw new Error("Not implemented");
-            /* console.log(config); */
+            this.dashboardConfig = config;
+            console.log(this.dashboardConfig);
         })
        
     }
