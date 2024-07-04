@@ -28,15 +28,14 @@ main{
 }
 
 .main-wrapper{
-    height: 72vh;
+    height: 78vh;
     width: 54vw;
     display: grid;
     justify-content: space-between;
-    align-content: space-between;
 }
 
 .inline-wrapper{
-    height: 20vh;
+    height: 25vh;
     width: 54vw;
     display: flex;
     justify-content: space-between;

@@ -4,7 +4,7 @@
 
 .new-releases-wrapper {
     width: 25vw;
-    height: 20vh;
+    height: 90%;
     background-color: rgb(33,33,33);
     border-radius: 1.5rem;
     display: grid;
@@ -12,6 +12,13 @@
     place-items: center;
     justify-content: space-evenly;
     transition: all .15s ease-in-out;
+}
+
+.label{
+    width: 100%;
+    color: #fff;
+    align-items: center;
+    text-align: center;
 }
 
 .releases{

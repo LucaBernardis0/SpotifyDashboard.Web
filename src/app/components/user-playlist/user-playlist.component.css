@@ -11,6 +11,22 @@
     overflow-x: hidden;
     overflow-y: scroll;
     transition: all .15s ease-in-out;
+
+}
+
+h2{
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+}
+
+.wrapper{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 36vh;
+    width: 100%;
+    display: grid;
 }
 
 .playlis-wrapper:hover{

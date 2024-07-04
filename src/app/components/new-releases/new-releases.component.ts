@@ -12,6 +12,7 @@ import { ListItem } from '../../models/listItem';
 export class NewReleasesComponent{
 
   @Input() releases: ListItem[] = []
+  @Input() label: string = '';
 
   constructor(){}
 

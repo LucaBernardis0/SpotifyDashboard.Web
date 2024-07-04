@@ -1,4 +1,5 @@
 <div class="new-releases-wrapper">
+    <h2 class="label">{{label}}</h2>
     <div class="releases">
         @for(newRelease of releases; track $index){
             <section class="new-release" (click)="newReleases(newRelease)">

@@ -12,6 +12,7 @@ export class TopArtistSongComponent{
   @Input() artist: string = '';
   @Input() image: string = '';
   @Input() trackName: string = '';
+  @Input() label: string= '';
 
   constructor(){}
 

@@ -1,11 +1,14 @@
 <div class="top-ten-songs">
-    @for (track of tracks; track $index) {
-        <section class="song" (click)="callPlaySong(this.track)"> 
-            <img src="{{track.image}}" class="song-img">
-            <div class="song-data" >
-                <h3>{{track.mainText}}</h3>
-                <h4>{{track.secondText}} <!--<br><span class="duration">{{track.duration}} m</span>--></h4>
-            </div>
-        </section>
-    }
+    <h2 class="label">{{label}}</h2>
+    <div class="wrapper">
+        @for (track of tracks; track $index) {
+            <section class="song" (click)="callPlaySong(this.track)">
+                <img src="{{track.image}}" class="song-img">
+                <div class="song-data" >
+                    <h3>{{track.mainText}}</h3>
+                    <h4>{{track.secondText}} <!--<br><span class="duration">{{track.duration}} m</span>--></h4>
+                </div>
+            </section>
+        }
+    </div>
 </div>

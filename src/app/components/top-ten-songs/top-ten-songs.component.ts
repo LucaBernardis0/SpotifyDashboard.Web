@@ -15,7 +15,7 @@ export class TopTenSongsComponent{
 
 
   @Input() tracks: ListItem[] = [];
-  
+  @Input() label: string = '';
 
 
   constructor(private trackService: TrackService) { }

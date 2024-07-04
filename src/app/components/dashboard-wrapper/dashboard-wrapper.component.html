@@ -6,12 +6,12 @@
     <aside class="left-side-elements">
         @for(widget of dashboardConfig; track $index){
             @if(widget.widgetName == "top-artist" && widget.type == "card"){
-                <app-top-artist [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
+                <app-top-artist [label]="widget.widgetLabel" [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
             }
         }
         @for(widget of dashboardConfig; track $index){
             @if(widget.widgetName == "top-ten-songs" && widget.type == "list"){
-                <app-top-ten-songs [tracks]="dashboardData.userTopTracks"></app-top-ten-songs>
+                <app-top-ten-songs [tracks]="dashboardData.userTopTracks" [label]="widget.widgetLabel"></app-top-ten-songs>
             }
         }
     </aside>
@@ -26,13 +26,13 @@
             <div class="inline-wrapper">
                 @for(widget of dashboardConfig; track $index){
                     @if(widget.widgetName == "top-artist-song" && widget.type == "card"){
-                    <app-top-artist-song [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
+                    <app-top-artist-song [label]="widget.widgetLabel" [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
                     }
                 }
 
                 @for(widget of dashboardConfig; track $index){
                     @if(widget.widgetName == "new-releases" && widget.type == "list"){
-                        <app-new-releases [releases]="dashboardData.newReleases"></app-new-releases>
+                        <app-new-releases [releases]="dashboardData.newReleases" [label]="widget.widgetLabel"></app-new-releases>
                     }
                 }
             </div>
@@ -49,7 +49,7 @@
 
         @for(widget of dashboardConfig; track $index){
             @if(widget.widgetName == "user-playlist" && widget.type == "list"){
-                <app-user-playlist [playlists]="dashboardData.userPlaylists"></app-user-playlist>
+                <app-user-playlist [playlists]="dashboardData.userPlaylists" [label]="widget.widgetLabel"></app-user-playlist>
             }
         }
 

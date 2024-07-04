@@ -23,7 +23,7 @@ export class DashboardWrapperComponent implements OnInit{
 
    // The object that contains the result of the dashboard api call
     public dashboardData: DashboardData | null;
-    public dashboardConfig: Config[] = []
+    public dashboardConfig: Config[] = [];
 
     constructor(private dashboardApiService: DashboardApiService){
         this.dashboardData = null;
@@ -46,7 +46,4 @@ export class DashboardWrapperComponent implements OnInit{
         })
        
     }
-
-    
-
 }

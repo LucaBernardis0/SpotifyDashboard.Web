@@ -11,6 +11,7 @@ export class TopArtistComponent{
 
   @Input() artistName: string = '';
   @Input() image: string = '';
+  @Input() label: string = ''
 
   constructor() { }
 

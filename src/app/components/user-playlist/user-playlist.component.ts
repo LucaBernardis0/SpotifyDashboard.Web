@@ -13,6 +13,7 @@ import { ListItem } from '../../models/listItem';
 export class UserPlaylistComponent{
 
   @Input() playlists: ListItem[] = [];
+  @Input() label: string = '';
 
   constructor(){}
   // When u click on a playlist it redirects you to the spotify page of that playlist
