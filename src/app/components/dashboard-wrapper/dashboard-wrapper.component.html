@@ -3,60 +3,72 @@
 <!-- Wait until all the data are loaded before loading the page content -->
 @if(dashboardData){
 <div class="wrapper">
-    <aside class="left-side-elements">
-        @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "top-artist"){
-                <app-card [label]="widget.widgetLabel" [description]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-card>
+    <aside class="left-side-elements w-1 h-4">
+        @for(widget of dashboardConfig | position: 'left'; track $index){
+            @if(widget.type == "card"){
+                <app-card
+                    [class]="'w-' + widget.width + ' h-' + widget.heigth" 
+                    [label]="widget.widgetLabel"
+                    [item]="dashboardData[widget.widgetProperty]">
+                </app-card>
             }
-        }
-        @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "top-ten-songs"){
-                <app-list [items]="dashboardData['userTopTracks']" [label]="widget.widgetLabel"></app-list>
+            @if(widget.type == "list"){
+                <app-list 
+                    [class]="'w-' + widget.width + ' h-' + widget.heigth" 
+                    [items]="dashboardData[widget.widgetProperty]" 
+                    [label]="widget.widgetLabel">
+                </app-list>
             }
         }
     </aside>
 
-    <main>
-        @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "user-data"){
-                <app-header [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-header>
-            }
-        }
-        <div class="main-wrapper">
-            <div class="inline-wrapper">
-                @for(widget of dashboardConfig; track $index){
-                    @if(widget.widgetName == "top-artist-song"){
-                        <app-card [label]="widget.widgetLabel" [description]="dashboardData.artistTopTrack.name" [image]="dashboardData.artistTopTrack.image"></app-card>
+    <main class="w-3 h-4">
+            @for(widget of dashboardConfig | position: 'center'; track $index){
+                    @if(widget.type == "header"){
+                        <app-header 
+                            [class]="'w-' + widget.width + ' h-' + widget.heigth" 
+                            [userName]="dashboardData.user.display_name" 
+                            [image]="dashboardData.user.image">
+                        </app-header>
+                    }
+                    @if(widget.type == "card"){
+                        <app-card 
+                            [class]="'w-' + widget.width + ' h-' + widget.heigth" 
+                            [label]="widget.widgetLabel" 
+                            [item]="dashboardData[widget.widgetProperty]">
+                        </app-card>
+                    }
+                    @if(widget.type == "list"){
+                        <app-list 
+                            [class]="'w-' + widget.width + ' h-' + widget.heigth"
+                            [items]="dashboardData.newReleases" 
+                            [label]="widget.widgetLabel">
+                        </app-list>
+                    }
+                    @if(widget.widgetName == "top-genres" && widget.type == "multi-list"){
+                        <app-multi-list 
+                            [class]="'w-' + widget.width + ' h-' + widget.heigth"
+                            [tracks]="dashboardData.recommendedTracks" 
+                            [albums]="dashboardData.artistAlbums">
+                        </app-multi-list>
                     }
                 }
-
-                @for(widget of dashboardConfig; track $index){
-                    @if(widget.widgetName == "new-releases"){
-                        <app-list [items]="dashboardData.newReleases" [label]="widget.widgetLabel"></app-list>
-                    }
-                }
-            </div>
-
-            @for(widget of dashboardConfig; track $index){
-                @if(widget.widgetName == "top-genres" && widget.type == "multi-list"){
-                    <app-multi-list [tracks]="dashboardData.recommendedTracks" [albums]="dashboardData.artistAlbums"></app-multi-list>
-                }
-            }
-        </div>
     </main>
 
-    <aside class="right-side-elements">
-
-        @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "user-playlist"){
-                <app-list [items]="dashboardData.userPlaylists" [label]="widget.widgetLabel"></app-list>
+    <aside class="right-side-elements w-1 h-4">
+        @for(widget of dashboardConfig | position: 'right'; track $index){
+            @if(widget.type == "list"){
+                <app-list 
+                    [class]="'w-' + widget.width + ' h-' + widget.heigth"
+                    [items]="dashboardData.userPlaylists" 
+                    [label]="widget.widgetLabel">
+                </app-list>
             }
-        }
-
-        @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "song-player"){
-                <app-song-player></app-song-player>
-            }
+<!--             @if(widget.type == "song-player"){
+                <app-song-player
+                [class]="'w-' + widget.width + ' h-' + widget.heigth">
+                </app-song-player>
+            } -->
         }
     </aside>
 </div>

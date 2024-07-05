@@ -7,13 +7,15 @@ import { DashboardApiService } from '../../services/api/dashboard-api.service';
 import { Config } from '../../models/config';
 import { CardComponent } from "../card/card.component";
 import { ListComponent } from '../list/list.component';
+import { PositionPipe } from '../../pipes/position.pipe';
 
 @Component({
     selector: 'app-dashboard-wrapper',
     standalone: true,
     templateUrl: './dashboard-wrapper.component.html',
     styleUrls: ['./dashboard-wrapper.component.css'],
-    imports: [HeaderComponent, SongPlayerComponent, ListComponent, CardComponent, MultiListComponent]
+    
+    imports: [HeaderComponent, SongPlayerComponent, ListComponent, CardComponent, MultiListComponent, PositionPipe],
 })
 export class DashboardWrapperComponent implements OnInit{
 

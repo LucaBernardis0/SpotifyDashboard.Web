@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Card } from '../../models/card';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
 
-  @Input() description: string = '';
-  @Input() image: string = '';
+  @Input() item: any;
   @Input() label: string = ''
 }

@@ -6,4 +6,5 @@ export interface Config{
     type: string
     width: number
     heigth: number
+    position: string
 }
