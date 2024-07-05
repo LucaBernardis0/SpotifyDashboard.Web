@@ -4,4 +4,6 @@ export interface Config{
     widgetProperty: string
     widgetLabel: string
     type: string
+    width: number
+    heigth: number
 }

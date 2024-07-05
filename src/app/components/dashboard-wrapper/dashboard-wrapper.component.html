@@ -5,41 +5,41 @@
 <div class="wrapper">
     <aside class="left-side-elements">
         @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "top-artist" && widget.type == "card"){
-                <app-top-artist [label]="widget.widgetLabel" [artistName]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-top-artist>
+            @if(widget.widgetName == "top-artist"){
+                <app-card [label]="widget.widgetLabel" [description]="dashboardData.topArtist.name" [image]="dashboardData.topArtist.image"></app-card>
             }
         }
         @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "top-ten-songs" && widget.type == "list"){
-                <app-top-ten-songs [tracks]="dashboardData.userTopTracks" [label]="widget.widgetLabel"></app-top-ten-songs>
+            @if(widget.widgetName == "top-ten-songs"){
+                <app-list [items]="dashboardData['userTopTracks']" [label]="widget.widgetLabel"></app-list>
             }
         }
     </aside>
 
     <main>
         @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName === "user-data" && widget.type == "card"){
-                <app-user-data [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-user-data>
+            @if(widget.widgetName == "user-data"){
+                <app-header [userName]="dashboardData.user.display_name" [image]="dashboardData.user.image"></app-header>
             }
         }
         <div class="main-wrapper">
             <div class="inline-wrapper">
                 @for(widget of dashboardConfig; track $index){
-                    @if(widget.widgetName == "top-artist-song" && widget.type == "card"){
-                    <app-top-artist-song [label]="widget.widgetLabel" [trackName]="dashboardData.artistTopTrack.name" [artist]="dashboardData.artistTopTrack.artist" [image]="dashboardData.artistTopTrack.image"></app-top-artist-song>
+                    @if(widget.widgetName == "top-artist-song"){
+                        <app-card [label]="widget.widgetLabel" [description]="dashboardData.artistTopTrack.name" [image]="dashboardData.artistTopTrack.image"></app-card>
                     }
                 }
 
                 @for(widget of dashboardConfig; track $index){
-                    @if(widget.widgetName == "new-releases" && widget.type == "list"){
-                        <app-new-releases [releases]="dashboardData.newReleases" [label]="widget.widgetLabel"></app-new-releases>
+                    @if(widget.widgetName == "new-releases"){
+                        <app-list [items]="dashboardData.newReleases" [label]="widget.widgetLabel"></app-list>
                     }
                 }
             </div>
 
             @for(widget of dashboardConfig; track $index){
                 @if(widget.widgetName == "top-genres" && widget.type == "multi-list"){
-                    <app-top-genres [tracks]="dashboardData.recommendedTracks" [albums]="dashboardData.artistAlbums"></app-top-genres>
+                    <app-multi-list [tracks]="dashboardData.recommendedTracks" [albums]="dashboardData.artistAlbums"></app-multi-list>
                 }
             }
         </div>
@@ -48,13 +48,13 @@
     <aside class="right-side-elements">
 
         @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "user-playlist" && widget.type == "list"){
-                <app-user-playlist [playlists]="dashboardData.userPlaylists" [label]="widget.widgetLabel"></app-user-playlist>
+            @if(widget.widgetName == "user-playlist"){
+                <app-list [items]="dashboardData.userPlaylists" [label]="widget.widgetLabel"></app-list>
             }
         }
 
         @for(widget of dashboardConfig; track $index){
-            @if(widget.widgetName == "song-player" && widget.type == "player"){
+            @if(widget.widgetName == "song-player"){
                 <app-song-player></app-song-player>
             }
         }
