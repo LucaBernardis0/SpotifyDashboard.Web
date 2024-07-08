@@ -11,7 +11,6 @@ export class SpotifyAuthService {
   // constant values for the authentication process 
   private readonly clientId = '480eb2a6091f4a95892f638ade6228e5';
   private readonly redirect_uri = 'http://localhost:4200/';
-  private readonly tokenUrl = 'https://accounts.spotify.com/api/token';
 
 
   // Shared token value
@@ -19,7 +18,7 @@ export class SpotifyAuthService {
   private authenticationInProgress = false;
   private accessTokenSubject = new BehaviorSubject<string | null>(null);
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   // Method to retrieve the authCode
   getAuthCode(): string | undefined {

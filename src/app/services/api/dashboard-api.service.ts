@@ -19,6 +19,10 @@ export class DashboardApiService {
 
   constructor(private http: HttpClient, private dashboardService: DashboardService) { }
 
+  // The api calls below are foundamentals for the correct functioning of the dashboard
+  // They are responsible for the retrieval of all the data that populates the widgets
+  // and all the informations about the widget configuration
+
   getDashboardData(): Observable<any>{
     return this.http.get<any>(`${this._baseUrl}/data`, {headers: this.httpheaders});
   }
